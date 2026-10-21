@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AcademiaDomain.BaseEntity">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademiaDomain.Aluno">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAgCAAAAAAAAAAAACAAAIAAQAAAAAAAAEAAAA=</HashCode>
+      <FileName>Aluno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademiaDomain.Divisao">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Divisao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademiaDomain.Treino">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAACAAAAQIAA=</HashCode>
+      <FileName>Treino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademiaDomain.Exercicio">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Exercicio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademiaDomain.ItemTreino">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAEAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
+      <FileName>ItemTreino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="10" />
+</ClassDiagram>
