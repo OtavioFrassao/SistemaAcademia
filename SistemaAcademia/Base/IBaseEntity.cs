@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademiaDomain.Base
 {
-    internal class IBaseEntity
+    public interface IBaseEntity
     {
     }
 }

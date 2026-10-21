@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademiaDomain.Base
 {
-    internal class BaseEntity : IBaseEntity
+    public abstract class BaseEntity : IBaseEntity
     {
 
         public int ID { get; set; }

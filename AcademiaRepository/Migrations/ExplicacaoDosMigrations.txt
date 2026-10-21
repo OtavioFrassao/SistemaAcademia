@@ -1,0 +1,3 @@
+﻿A pasta Migrations é o histórico automatizado do nosso banco de dados. Através da abordagem Code First, o Entity Framework lê as nossas classes
+de Domínio e as configurações do Repositório para gerar arquivos C# com os métodos Up (para aplicar as tabelas físicas no PostgreSQL)
+e Down (para reverter). Isso garante que o nosso código orientado a objetos e o banco relacional estejam sempre 100% sincronizados.

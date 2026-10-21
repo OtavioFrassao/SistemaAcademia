@@ -21,5 +21,6 @@ namespace AcademiaDomain
 
         public int DivisaoID { get; set; }
 
+        public virtual ICollection<ItemTreino> ItensTreino { get; set; } = new List<ItemTreino>();
     }
 }
