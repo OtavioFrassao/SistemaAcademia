@@ -7,7 +7,7 @@ namespace AcademiaDomain
 {
     public class Treino : BaseEntity
     {
-        public string Descricao { get; set; }
+        public string Descricao { get; set; } = string.Empty;
 
 
         public DateTime DataInicio { get; set; }
@@ -16,10 +16,7 @@ namespace AcademiaDomain
         public DateTime DataFim { get; set; }
 
 
-        public int AlunoID { get; set; }
-
-
-        public int DivisaoID { get; set; }
+        public Aluno Aluno { get; set; }
 
         public virtual ICollection<ItemTreino> ItensTreino { get; set; } = new List<ItemTreino>();
     }

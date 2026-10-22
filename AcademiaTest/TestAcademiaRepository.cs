@@ -10,7 +10,7 @@ namespace AcademiaTest
         public partial class MyDBContext : DbContext
         {
             public DbSet<Aluno> Aluno { get; set; }
-            public DbSet<Divisao> Divisao { get; set; }
+            public DbSet<AvaliacaoFisica> AvaliacaoFisica { get; set; }
             public DbSet<Exercicio> Exercicio { get; set; }
             public DbSet<ItemTreino> ItemTreino { get; set; }
             public DbSet<Treino> Treino { get; set; }
@@ -46,29 +46,6 @@ namespace AcademiaTest
             }
         }
 
-        [TestMethod]
-        public void InsereDivisao()
-        {
-            using (var db = new MyDBContext())
-            {
-                db.Divisao.Add(new Divisao { ID = 1, Descricao = "Treino A - Peito e Tríceps" });
-                db.Divisao.Add(new Divisao { ID = 2, Descricao = "Treino B - Costas e Bíceps" });
-                db.Divisao.Add(new Divisao { ID = 3, Descricao = "Treino C - Pernas e Ombros" });
-                db.SaveChanges();
-            }
-        }
-
-        [TestMethod]
-        public void ListarDivisao()
-        {
-            using (var db = new MyDBContext())
-            {
-                foreach (var item in db.Divisao)
-                {
-                    Console.WriteLine(JsonSerializer.Serialize(item));
-                }
-            }
-        }
 
         [TestMethod]
         public void InsereExercicio()
@@ -132,12 +109,12 @@ namespace AcademiaTest
                     Descricao = "Foco Hipertrofia",
                     DataInicio = DateTime.Now,
                     DataFim = DateTime.Now.AddMonths(1),
-                    AlunoID = aluno.ID,
+                    Aluno = aluno.ID,
                     DivisaoID = divisaoA.ID,
                     ItensTreino = new List<ItemTreino>()
                 };
 
-                treino.ItensTreino.Add(new ItemTreino { ID = 1, ExercicioID = exercicioSupino.ID, Series = 4, Repeticoes = "12", CargaRecomendada = "20kg de cada lado" });
+                treino.ItensTreino.Add(new ItemTreino { ID = 1, Exercicio = exercicioSupino.ID, Series = 4, Repeticoes = "12", CargaRecomendada = "20kg de cada lado" });
 
                 db.Treino.Add(treino);
                 db.SaveChanges();

@@ -14,17 +14,17 @@
       <FileName>Aluno.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademiaDomain.Divisao">
+  <Class Name="AcademiaDomain.AvaliacaoFisica">
     <Position X="5.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Divisao.cs</FileName>
+      <HashCode>AAAAAAAAAAFAAAAAAAAAAAAAAAACAAAAAAAAAAABAgA=</HashCode>
+      <FileName>AvaliacaoFisica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademiaDomain.Treino">
     <Position X="9" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAACAAAAQIAA=</HashCode>
+      <HashCode>AAAABAAAAAABAAAAAAAQAAAAAAAAAAAAAACAAAABAAA=</HashCode>
       <FileName>Treino.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="AcademiaDomain.ItemTreino">
     <Position X="7" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAEAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAgEAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
       <FileName>ItemTreino.cs</FileName>
     </TypeIdentifier>
   </Class>

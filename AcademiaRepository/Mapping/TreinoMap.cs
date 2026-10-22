@@ -21,11 +21,10 @@ namespace AcademiaRepository.Mapping
             // Configuração das Chaves Estrangeiras (Relacionamentos)
 
             // Ligação com o Aluno (1 para N)
-            Builder.HasOne<Aluno>().WithMany(x => x.Treinos).HasForeignKey(x => x.AlunoID).OnDelete(DeleteBehavior.Cascade); //OnDelete cascate: Se apagar o aluno, os treinos dele são apagados
+            Builder.HasOne<Aluno>().WithMany(x => x.Treinos).HasForeignKey(x => x.Aluno).OnDelete(DeleteBehavior.Cascade); //OnDelete cascate: Se apagar o aluno, os treinos dele são apagados
 
-            // Ligação com a Divisão (1 para N)
-            Builder.HasOne<Divisao>().WithMany().HasForeignKey(x => x.DivisaoID).OnDelete(DeleteBehavior.Restrict); //OnDelete Restrict: Impede apagar uma Divisão se ela estiver a ser usada num Treino
-
+            // Relacionamento com ItensTreino
+            Builder.HasMany(x => x.ItensTreino).WithOne(i => i.Treino).OnDelete(DeleteBehavior.Cascade);
             /*
              HasOne<Aluno>() e WithMany(x => x.Treinos): Esta linha traduz-se para SQL da seguinte forma: "Este Treino pertence a UM Aluno, e esse Aluno contém MUITOS Treinos na sua lista virtual". O Entity Framework vai usar o campo AlunoID para fazer a ligação oficial no PostgreSQL.
 

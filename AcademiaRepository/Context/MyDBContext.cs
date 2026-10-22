@@ -17,7 +17,7 @@ namespace AcademiaRepository.Context
     public class MyDBContext : DbContext
     {
         public DbSet<Aluno> Aluno { get; set; }
-        public DbSet<Divisao> Divisao { get; set; }
+        public DbSet<AvaliacaoFisica> AvaliacaoFisica { get; set; }
         public DbSet<Exercicio> Exercicio { get; set; }
         public DbSet<ItemTreino> ItemTreino { get; set; }
         public DbSet<Treino> Treino { get; set; }
@@ -31,7 +31,7 @@ namespace AcademiaRepository.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Aluno>(new AlunoMap().Configure);
-            modelBuilder.Entity<Divisao>(new DivisaoMap().Configure);
+            modelBuilder.Entity<AvaliacaoFisica>(new AvaliacaoFisicaMap().Configure);
             modelBuilder.Entity<Exercicio>(new ExercicioMap().Configure);
             modelBuilder.Entity<ItemTreino>(new ItemTreinoMap().Configure);
             modelBuilder.Entity<Treino>(new TreinoMap().Configure);
