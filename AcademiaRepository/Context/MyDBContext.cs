@@ -22,7 +22,7 @@ namespace AcademiaRepository.Context
         public DbSet<ItemTreino> ItemTreino { get; set; }
         public DbSet<Treino> Treino { get; set; }
 
-        public MyDBContext()
+        public MyDBContext(DbContextOptions<MyDBContext> options) : base(options)
         {
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }

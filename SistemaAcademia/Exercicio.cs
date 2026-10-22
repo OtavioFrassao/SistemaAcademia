@@ -10,7 +10,7 @@ namespace AcademiaDomain
         public string Nome { get; set; }
 
 
-        public string GrupoMuscular { get; set; }
+        public string GrupoMuscular { get; set; } = string.Empty;
 
     }
 }
