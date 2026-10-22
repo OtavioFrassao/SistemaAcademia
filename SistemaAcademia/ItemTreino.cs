@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AcademiaDomain.Base;
 
 namespace AcademiaDomain
 {
     public class ItemTreino : BaseEntity
     {
-        public  Treino Treino { get; set; }
-
-        public  Exercicio Exercicio { get; set; }
-
         public int Series { get; set; }
 
 
@@ -18,6 +15,11 @@ namespace AcademiaDomain
 
 
         public string CargaRecomendada { get; set; }
+
+        // Propriedades de navegação de objetos
+        public  Exercicio Exercicio { get; set; } = null!;
+
+        public  Treino Treino { get; set; } = null!;
 
     }
 }

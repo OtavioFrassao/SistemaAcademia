@@ -19,10 +19,8 @@ namespace AcademiaService.Validators
                 .LessThanOrEqualTo(t => t.DataFim).WithMessage("A data de início deve ser menor ou igual à data de fim.");
             RuleFor(t => t.DataFim)
                 .GreaterThanOrEqualTo(t => t.DataInicio).WithMessage("A data de fim deve ser maior ou igual à data de início.");
-            RuleFor(t => t.AlunoID)
-                .GreaterThan(0).WithMessage("O ID do aluno deve ser maior que zero.");
-            RuleFor(t => t.DivisaoID)
-                .GreaterThan(0).WithMessage("O ID da divisão deve ser maior que zero.");
+            RuleFor(t => t.Aluno)
+                .NotNull().WithMessage("O treino precisa estar associado a um aluno.");
             RuleFor(t => t.ItensTreino)
                 .NotNull().WithMessage("A lista de exercícios não pode ser nula")
                 .Must(list => list != null && list.Count > 0)

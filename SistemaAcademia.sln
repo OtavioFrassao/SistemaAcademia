@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaRepository", "Acade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaService", "AcademiaService\AcademiaService.csproj", "{6A9D060E-927C-4FEA-88D7-C1886859CD50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaApp", "AcademiaApp\AcademiaApp.csproj", "{745B6E27-1173-4DD6-9D2D-E0B94B5E0669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{6A9D060E-927C-4FEA-88D7-C1886859CD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A9D060E-927C-4FEA-88D7-C1886859CD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A9D060E-927C-4FEA-88D7-C1886859CD50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745B6E27-1173-4DD6-9D2D-E0B94B5E0669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745B6E27-1173-4DD6-9D2D-E0B94B5E0669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745B6E27-1173-4DD6-9D2D-E0B94B5E0669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745B6E27-1173-4DD6-9D2D-E0B94B5E0669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

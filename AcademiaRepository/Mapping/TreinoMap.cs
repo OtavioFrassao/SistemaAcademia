@@ -21,7 +21,7 @@ namespace AcademiaRepository.Mapping
             // Configuração das Chaves Estrangeiras (Relacionamentos)
 
             // Ligação com o Aluno (1 para N)
-            Builder.HasOne<Aluno>().WithMany(x => x.Treinos).HasForeignKey(x => x.Aluno).OnDelete(DeleteBehavior.Cascade); //OnDelete cascate: Se apagar o aluno, os treinos dele são apagados
+            Builder.HasOne(x => x.Aluno).WithMany(a => a.Treinos).OnDelete(DeleteBehavior.Cascade); //OnDelete cascate: Se apagar o aluno, os treinos dele são apagados
 
             // Relacionamento com ItensTreino
             Builder.HasMany(x => x.ItensTreino).WithOne(i => i.Treino).OnDelete(DeleteBehavior.Cascade);

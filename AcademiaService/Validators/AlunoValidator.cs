@@ -26,7 +26,7 @@ namespace AcademiaService.Validators
                 .NotEmpty().WithMessage("O CPF do aluno é obrigatório.")
                 .Matches(@"^\d{3}\.\d{3}\.\d{3}-\d{2}$").WithMessage("O CPF do aluno deve estar no formato XXX.XXX.XXX-XX.");
             RuleFor(a => a.StatusMatricula)
-                .IsInEnum().WithMessage("O status da matrícula do aluno deve ser um valor válido.");
+                .NotNull().WithMessage("O status da matrícula do aluno deve ser um valor válido.");
         }
     }
 }

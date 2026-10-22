@@ -10,12 +10,12 @@ namespace AcademiaService.Validators
     {
         public ItemTreinoValidator()
         {
-            RuleFor(it => it.TreinoID)
+            RuleFor(it => it.Treino)
                 .NotEmpty().WithMessage("TreinoID é obrigatório.")
-                .GreaterThan(0).WithMessage("TreinoID deve ser maior que zero.");
-            RuleFor(it => it.ExercicioID)
+                .WithMessage("TreinoID deve ser maior que zero.");
+            RuleFor(it => it.Exercicio)
                 .NotEmpty().WithMessage("ExercicioID é obrigatório.")
-                .GreaterThan(0).WithMessage("ExercicioID deve ser maior que zero.");
+                .WithMessage("ExercicioID deve ser maior que zero.");
             RuleFor(it => it.Series)
                 .NotEmpty().WithMessage("Series é obrigatório.")
                 .GreaterThan(0).WithMessage("Series deve ser maior que zero.");

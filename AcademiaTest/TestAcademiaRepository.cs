@@ -1,6 +1,7 @@
 ﻿using AcademiaDomain;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AcademiaTest
 {
@@ -18,7 +19,7 @@ namespace AcademiaTest
             public MyDBContext()
             {
                 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-                Database.EnsureCreated();
+                //Database.EnsureCreated();
             }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -37,6 +38,17 @@ namespace AcademiaTest
                 }
             }
         }
+
+        [ClassInitialize]
+        public static void SetupDatabase(TestContext context)
+        {
+            using (var db = new MyDBContext())
+            {
+                db.Database.EnsureDeleted(); // Apaga o banco de testes antigo se existir
+                db.Database.EnsureCreated(); // Cria as tabelas do zero de forma limpa
+            }
+        }
+
         [TestMethod]
         public void CriarBanco()
         {
@@ -95,26 +107,74 @@ namespace AcademiaTest
         }
 
         [TestMethod]
+        public void InsereAvaliacaoFisica()
+        {
+            using (var db = new MyDBContext())
+            {
+                var aluno = db.Aluno.FirstOrDefault(x => x.ID == 1);
+
+                //garante que pelo menos um aluno esteja criado para funcionar o teste
+                if (aluno == null)
+                {
+                    aluno = new Aluno { Nome = "Otávio Frassão", CPF = "111.222.333-44", Email = "otavio@email.com", Telefone = "11999999999", DataNascimento = new DateTime(2000, 1, 1), StatusMatricula = true };
+                    db.Aluno.Add(aluno);
+                    db.SaveChanges();
+                }
+
+                var avaliacao = new AvaliacaoFisica
+                {
+                    ID = 1,
+                    Peso = 75.5,
+                    Altura = 1.78,
+                    DataAvaliacao = DateTime.Now,
+                    Observacao = "Avaliação inicial de reavaliação",
+                    Aluno = aluno!
+                };
+
+                db.AvaliacaoFisica.Add(avaliacao);
+                db.SaveChanges();
+            }
+        }
+
+        [TestMethod]
+        public void ListarAvaliacaoFisica()
+        {
+            using (var db = new MyDBContext())
+            {
+                var avaliacoes = db.AvaliacaoFisica.Include(a => a.Aluno).ToList();
+                foreach (var item in avaliacoes)
+                {
+                    Console.WriteLine(JsonSerializer.Serialize(item, new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.IgnoreCycles }));
+                }
+            }
+        }
+
+        [TestMethod]
         public void InsereTreinoEItens()
         {
             using (var db = new MyDBContext())
             {
                 var aluno = db.Aluno.FirstOrDefault(x => x.ID == 1);
-                var divisaoA = db.Divisao.FirstOrDefault(x => x.ID == 1);
+                if (aluno == null)
+                {
+                    aluno = new Aluno { Nome = "Otávio Frassão", CPF = "111.222.333-44", Email = "otavio@email.com", Telefone = "11999999999", DataNascimento = new DateTime(2000, 1, 1), StatusMatricula = true };
+                    db.Aluno.Add(aluno);
+                    db.SaveChanges();
+                }
+
                 var exercicioSupino = db.Exercicio.FirstOrDefault(x => x.ID == 1);
 
                 var treino = new Treino
                 {
                     ID = 1,
-                    Descricao = "Foco Hipertrofia",
+                    Descricao = "Foco Hipertrofia - Peito",
                     DataInicio = DateTime.Now,
                     DataFim = DateTime.Now.AddMonths(1),
-                    Aluno = aluno.ID,
-                    DivisaoID = divisaoA.ID,
+                    Aluno = aluno!,
                     ItensTreino = new List<ItemTreino>()
                 };
 
-                treino.ItensTreino.Add(new ItemTreino { ID = 1, Exercicio = exercicioSupino.ID, Series = 4, Repeticoes = "12", CargaRecomendada = "20kg de cada lado" });
+                treino.ItensTreino.Add(new ItemTreino { ID = 1, Exercicio = exercicioSupino!/* Atribuído o objeto Exercicio diretamente*/, Series = 4, Repeticoes = "12", CargaRecomendada = "20kg de cada lado" });
 
                 db.Treino.Add(treino);
                 db.SaveChanges();

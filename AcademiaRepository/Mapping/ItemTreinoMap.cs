@@ -17,11 +17,11 @@ namespace AcademiaRepository.Mapping
             Builder.Property(x => x.Repeticoes).IsRequired(true).HasMaxLength(50);
             Builder.Property(x => x.CargaRecomendada).IsRequired(true).HasMaxLength(50);
 
-            // Ligação com o Treino (1 para N)
-            Builder.HasOne<Treino>().WithMany(x => x.ItensTreino).HasForeignKey(x => x.Treino).OnDelete(DeleteBehavior.Cascade);
-
             // Ligação com o Exercicio (1 para N)
-            Builder.HasOne<Exercicio>().WithMany().HasForeignKey(x => x.Exercicio).OnDelete(DeleteBehavior.Cascade);
+            Builder.HasOne(x => x.Exercicio).WithMany().OnDelete(DeleteBehavior.Restrict);
+            
+            // Ligação com o Treino (1 para N)
+            Builder.HasOne(x => x.Treino).WithMany(t => t.ItensTreino).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -42,17 +42,21 @@ namespace AcademiaTest
         }
 
         [TestMethod]
-        public void TestDivisao() {
-
-            var divisao = new Divisao
-            {
+        public void TestAvaliacaoFisica() {
+            var aluno = new Aluno { ID = 1, Nome = "Otavio" };
+            var avaliacaofisica = new AvaliacaoFisica
+            {                
                 ID = 1,
-                Descricao = "Emagrecimento e Ganho de massa muscular"
+                Peso = 75.5,
+                Altura = 1.78,
+                DataAvaliacao = DateTime.Now,
+                Observacao = "Avaliação física de teste",
+                Aluno = aluno
             };
 
-            var divisaoJson = JsonSerializer.Serialize(divisao, OptionsJson());
-            Debug.WriteLine(divisaoJson);
-            Assert.IsNotNull(divisaoJson);
+            var avaliacaofisicaJson = JsonSerializer.Serialize(avaliacaofisica, OptionsJson());
+            Debug.WriteLine(avaliacaofisicaJson);
+            Assert.IsNotNull(avaliacaofisicaJson);
 
         }
 
@@ -75,14 +79,13 @@ namespace AcademiaTest
         [TestMethod]
         public void TestTreino()
         {
-
+            var aluno = new Aluno { ID = 1, Nome = "Otavio" };
             var treino = new Treino { 
                 ID = 1,
                 Descricao = "Treino A - Peito e Triceps",
                 DataInicio = new DateTime(2026, 10, 20),
                 DataFim = new DateTime(2026, 11, 20), // Vence em 1 mês
-                AlunoID = 1, //ID do aluno Otávio
-                DivisaoID = 1 //ID da divisão Emagrecimento e Ganho de massa muscular
+                Aluno = aluno, //ID do aluno Otávio
             };
 
             var treinoJson = JsonSerializer.Serialize(treino, OptionsJson());
@@ -93,11 +96,13 @@ namespace AcademiaTest
         [TestMethod]
         public void TestItemTreino()
         {
-
+            var exercicio = new Exercicio { ID = 1, Nome = "Supino Reto" };
+            var treino = new Treino { ID = 1, Descricao = "Treino A" };
             var item = new ItemTreino {
+                
                 ID = 1,
-                TreinoID = 1,
-                ExercicioID = 1,
+                Treino = treino,
+                Exercicio = exercicio,
                 Series = 4,
                 Repeticoes = "10 a 12",
                 CargaRecomendada = "20kg de cada lado"
