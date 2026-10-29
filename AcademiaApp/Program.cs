@@ -1,3 +1,5 @@
+using AcademiaApp.Infra;
+
 namespace AcademiaApp
 {
     internal static class Program
@@ -10,6 +12,7 @@ namespace AcademiaApp
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            ConfigureDI.Configure();
             ApplicationConfiguration.Initialize();
             Application.Run(new FormPrincipal());
         }
