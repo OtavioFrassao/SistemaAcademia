@@ -34,6 +34,7 @@
             exercicioToolStripMenuItem = new ToolStripMenuItem();
             avaliaçãoFisicaToolStripMenuItem = new ToolStripMenuItem();
             treinoToolStripMenuItem = new ToolStripMenuItem();
+            itemTreinoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,13 +43,13 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuStrip1.Location = new Point(3, 64);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(794, 24);
+            menuStrip1.Size = new Size(873, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoToolStripMenuItem, exercicioToolStripMenuItem, avaliaçãoFisicaToolStripMenuItem, treinoToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoToolStripMenuItem, exercicioToolStripMenuItem, avaliaçãoFisicaToolStripMenuItem, treinoToolStripMenuItem, itemTreinoToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -56,33 +57,44 @@
             // alunoToolStripMenuItem
             // 
             alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            alunoToolStripMenuItem.Size = new Size(180, 22);
+            alunoToolStripMenuItem.Size = new Size(157, 22);
             alunoToolStripMenuItem.Text = "Aluno";
+            alunoToolStripMenuItem.Click += alunoToolStripMenuItem_Click;
             // 
             // exercicioToolStripMenuItem
             // 
             exercicioToolStripMenuItem.Name = "exercicioToolStripMenuItem";
-            exercicioToolStripMenuItem.Size = new Size(180, 22);
+            exercicioToolStripMenuItem.Size = new Size(157, 22);
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
             // 
             // avaliaçãoFisicaToolStripMenuItem
             // 
             avaliaçãoFisicaToolStripMenuItem.Name = "avaliaçãoFisicaToolStripMenuItem";
-            avaliaçãoFisicaToolStripMenuItem.Size = new Size(180, 22);
+            avaliaçãoFisicaToolStripMenuItem.Size = new Size(157, 22);
             avaliaçãoFisicaToolStripMenuItem.Text = "Avaliação Fisica";
+            avaliaçãoFisicaToolStripMenuItem.Click += avaliaçãoFisicaToolStripMenuItem_Click;
             // 
             // treinoToolStripMenuItem
             // 
             treinoToolStripMenuItem.Name = "treinoToolStripMenuItem";
-            treinoToolStripMenuItem.Size = new Size(180, 22);
+            treinoToolStripMenuItem.Size = new Size(157, 22);
             treinoToolStripMenuItem.Text = "Treino";
+            treinoToolStripMenuItem.Click += treinoToolStripMenuItem_Click;
+            // 
+            // itemTreinoToolStripMenuItem
+            // 
+            itemTreinoToolStripMenuItem.Name = "itemTreinoToolStripMenuItem";
+            itemTreinoToolStripMenuItem.Size = new Size(157, 22);
+            itemTreinoToolStripMenuItem.Text = "ItemTreino";
+            itemTreinoToolStripMenuItem.Click += itemTreinoToolStripMenuItem_Click;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(879, 523);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -102,5 +114,6 @@
         private ToolStripMenuItem avaliaçãoFisicaToolStripMenuItem;
         private ToolStripMenuItem treinoToolStripMenuItem;
         protected MenuStrip menuStrip1;
+        private ToolStripMenuItem itemTreinoToolStripMenuItem;
     }
 }

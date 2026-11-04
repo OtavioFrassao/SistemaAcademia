@@ -18,6 +18,7 @@ namespace AcademiaApp.Cadastros
         {
             _exercicioService = exercicioService;
             InitializeComponent();
+            CarregaGrid();
         }
 
         private void PreencheObjeto(Exercicio exercicio)

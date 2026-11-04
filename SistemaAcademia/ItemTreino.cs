@@ -11,10 +11,10 @@ namespace AcademiaDomain
         public int Series { get; set; }
 
 
-        public string Repeticoes { get; set; }
+        public string Repeticoes { get; set; } = string.Empty;
 
 
-        public string CargaRecomendada { get; set; }
+        public string CargaRecomendada { get; set; } = string.Empty;
 
         // Propriedades de navegação de objetos
         public  Exercicio Exercicio { get; set; } = null!;

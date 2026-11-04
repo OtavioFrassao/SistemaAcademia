@@ -23,7 +23,13 @@ namespace AcademiaApp.Infra
             #region Banco de Dados Injeção de Dependências
             var strCon = File.ReadAllText("Config/ConfigDB.txt").Trim();
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-            Services.AddDbContext<MyDBContext>(options => options.UseNpgsql(strCon));
+
+            /*No Windows Forms, a conexão com o banco de dados fica viva durante toda a execução da tela. Quando a grid de consulta é carregada, o Entity Framework guarda o exercício na memória. Ao tentar salvar a edição, a arquitetura do projeto (usando o AutoMapper) cria uma "cópia" desse exercício com o mesmo ID. O Entity Framework bloqueia a atualização porque não aceita gerenciar duas versões do mesmo ID ao mesmo tempo.*/
+            Services.AddDbContext<MyDBContext>(options =>
+            {
+                options.UseNpgsql(strCon);
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            }, ServiceLifetime.Transient);
             #endregion
 
             #region Repositorio Injeção de Dependência
@@ -55,7 +61,10 @@ namespace AcademiaApp.Infra
 
             #region Registro dos Formulários
             Services.AddTransient<CadastroExercicio>();
-            //Services.AddTransient<CadastroAluno>();
+            Services.AddTransient<CadastroAluno>();
+            Services.AddTransient<CadastroAvaliacaoFisica>();
+            Services.AddTransient<CadastroTreino>();
+            Services.AddTransient<CadastroItemTreino>();
             #endregion
 
             ServiceProvider = Services.BuildServiceProvider();

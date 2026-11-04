@@ -23,6 +23,24 @@ namespace AcademiaApp.Base
         #endregion
 
         #region Eventos de Tela
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            // Se a tela for filha de um Form MDI Principal, calcula o centro
+            if (MdiParent != null)
+            {
+                this.Location = new System.Drawing.Point(
+                    (MdiParent.ClientSize.Width - this.Width) / 2,
+                    (MdiParent.ClientSize.Height - this.Height) / 2
+                );
+            }
+            else
+            {
+                this.StartPosition = FormStartPosition.CenterScreen;
+            }
+        }
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Deseja realmente cancelar?", "Cancelar",

@@ -35,6 +35,15 @@ namespace AcademiaRepository.Context
             modelBuilder.Entity<Exercicio>(new ExercicioMap().Configure);
             modelBuilder.Entity<ItemTreino>(new ItemTreinoMap().Configure);
             modelBuilder.Entity<Treino>(new TreinoMap().Configure);
+
+            // AutoIncludes para carregar os relacionamentos automaticamente
+            modelBuilder.Entity<AvaliacaoFisica>().Navigation(a => a.Aluno).AutoInclude();
+            modelBuilder.Entity<Treino>().Navigation(t => t.Aluno).AutoInclude();
+            modelBuilder.Entity<Treino>().Navigation(t => t.ItensTreino).AutoInclude();
+
+            // Garante que ao carregar o ItemTreino, ele traz o Treino e o Exercicio
+            modelBuilder.Entity<ItemTreino>().Navigation(i => i.Treino).AutoInclude();
+            modelBuilder.Entity<ItemTreino>().Navigation(i => i.Exercicio).AutoInclude();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

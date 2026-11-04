@@ -40,17 +40,13 @@
             // 
             TabControlCadastro.Size = new Size(809, 385);
             // 
-            // tabPageConsulta
-            // 
-            tabPageConsulta.Size = new Size(801, 357);
-            // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(195, 192);
+            buttonSalvar.Location = new Point(176, 196);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(91, 192);
+            buttonCancelar.Location = new Point(72, 196);
             // 
             // buttonEditar
             // 

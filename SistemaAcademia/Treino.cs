@@ -10,6 +10,7 @@ namespace AcademiaDomain
     {
         public string Descricao { get; set; } = string.Empty;
 
+        public string NomeTreino { get; set; } = string.Empty; // Ex: Treino A - Hipertrofia
 
         public DateTime DataInicio { get; set; }
 

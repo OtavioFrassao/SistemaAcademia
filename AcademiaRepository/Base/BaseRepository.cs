@@ -25,30 +25,47 @@ namespace AcademiaRepository.Base
         }
         public void Create(TypeEntity entity)
         {
-            _myDbContext.Add(entity);
+            _myDbContext.ChangeTracker.Clear();
+            _myDbContext.Attach(entity);
+            // Define apenas a AvaliacaoFisica principal como Added
+            _myDbContext.Entry(entity).State = EntityState.Added;
             _myDbContext.SaveChanges();
+            _myDbContext.ChangeTracker.Clear();
         }
+
+        /*Como o seu modelo não utiliza a chave estrangeira explícita (AlunoId) a pedido do professor, a solução é garantir que todas as consultas leiam os dados desconectados da memória (AsNoTracking()) e desanexar as entidades após salvar.*/
+
+        /*O método Attach avisa ao EF Core que os objetos relacionados que já possuem ID (como o Aluno) já existem no banco e não devem ser inseridos novamente.*/
         public TypeEntity ReadById(int id)
         {
-            var dbContext = _myDbContext.Set<TypeEntity>().AsQueryable();
-            return dbContext.ToList().Find(x => x.ID == id);
+            _myDbContext.ChangeTracker.Clear();
+            var dbContext = _myDbContext.Set<TypeEntity>().AsNoTracking().AsQueryable();
+            return _myDbContext.Set<TypeEntity>().AsNoTracking().FirstOrDefault(x => x.ID == id);
         }
 
         public IList<TypeEntity> ReadAll()
         {
-            var dbContext = _myDbContext.Set<TypeEntity>().AsQueryable();
+            _myDbContext.ChangeTracker.Clear();
+            var dbContext = _myDbContext.Set<TypeEntity>().AsNoTracking().AsQueryable();
             return dbContext.ToList();
         }
 
-        public void Update(TypeEntity entity)
+        public void Update(TypeEntity obj)
         {
-            _myDbContext.Entry(entity).State = EntityState.Modified;
-            _myDbContext.SaveChanges(true);
+            _myDbContext.ChangeTracker.Clear();
+
+            _myDbContext.Attach(obj);
+            _myDbContext.Entry(obj).State = EntityState.Modified;
+
+            _myDbContext.SaveChanges();
+            _myDbContext.ChangeTracker.Clear();
         }
         public void Delete(int id)
         {
+            _myDbContext.ChangeTracker.Clear();
             _myDbContext.Remove(ReadById(id));
             _myDbContext.SaveChanges();
+            _myDbContext.ChangeTracker.Clear();
         }
     }
 }
