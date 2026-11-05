@@ -25,6 +25,14 @@ namespace AcademiaApp
             }
         }
 
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void exercicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var cadastroExercicio = ConfigureDI.ServiceProvider.GetService<CadastroExercicio>();

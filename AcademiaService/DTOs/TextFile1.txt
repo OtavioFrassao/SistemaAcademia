@@ -1,2 +1,0 @@
-﻿O objetivo de um DTO é ser uma versão "leve" da sua entidade original de Domínio. Ele carrega apenas os dados necessários para as telas da aplicação, 
-deixando de fora listas complexas (como a lista de treinos) ou ligações com o banco.

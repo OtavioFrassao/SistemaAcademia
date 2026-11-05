@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            TabControlCadastro = new TabControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroBase));
+            TabControlCadastro = new ReaLTaiizor.Controls.MaterialTabControl();
             tabPageCadastro = new TabPage();
             buttonSalvar = new ReaLTaiizor.Controls.MaterialButton();
             buttonCancelar = new ReaLTaiizor.Controls.MaterialButton();
@@ -49,8 +50,12 @@
             // 
             TabControlCadastro.Controls.Add(tabPageCadastro);
             TabControlCadastro.Controls.Add(tabPageConsulta);
+            TabControlCadastro.Depth = 0;
             TabControlCadastro.Dock = DockStyle.Fill;
+            TabControlCadastro.ImageList = imageListMenu;
             TabControlCadastro.Location = new Point(3, 64);
+            TabControlCadastro.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            TabControlCadastro.Multiline = true;
             TabControlCadastro.Name = "TabControlCadastro";
             TabControlCadastro.SelectedIndex = 0;
             TabControlCadastro.Size = new Size(790, 389);
@@ -60,6 +65,7 @@
             // 
             tabPageCadastro.Controls.Add(buttonSalvar);
             tabPageCadastro.Controls.Add(buttonCancelar);
+            tabPageCadastro.ImageKey = "register.png";
             tabPageCadastro.Location = new Point(4, 24);
             tabPageCadastro.Name = "tabPageCadastro";
             tabPageCadastro.Padding = new Padding(3);
@@ -118,6 +124,7 @@
             tabPageConsulta.Controls.Add(buttonEditar);
             tabPageConsulta.Controls.Add(buttonNovo);
             tabPageConsulta.Controls.Add(dataGridViewConsulta);
+            tabPageConsulta.ImageKey = "find.png";
             tabPageConsulta.Location = new Point(4, 24);
             tabPageConsulta.Name = "tabPageConsulta";
             tabPageConsulta.Padding = new Padding(3);
@@ -196,6 +203,7 @@
             // 
             dataGridViewConsulta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewConsulta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewConsulta.ImeMode = ImeMode.NoControl;
             dataGridViewConsulta.Location = new Point(6, 6);
             dataGridViewConsulta.MultiSelect = false;
             dataGridViewConsulta.Name = "dataGridViewConsulta";
@@ -207,8 +215,10 @@
             // imageListMenu
             // 
             imageListMenu.ColorDepth = ColorDepth.Depth32Bit;
-            imageListMenu.ImageSize = new Size(16, 16);
+            imageListMenu.ImageStream = (ImageListStreamer)resources.GetObject("imageListMenu.ImageStream");
             imageListMenu.TransparentColor = Color.Transparent;
+            imageListMenu.Images.SetKeyName(0, "find.png");
+            imageListMenu.Images.SetKeyName(1, "register.png");
             // 
             // CadastroBase
             // 
@@ -216,6 +226,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(796, 456);
             Controls.Add(TabControlCadastro);
+            DrawerAutoShow = true;
+            DrawerTabControl = TabControlCadastro;
             Name = "CadastroBase";
             Text = "CadastroBase";
             TabControlCadastro.ResumeLayout(false);
@@ -230,7 +242,7 @@
         #endregion
 
         private TabControl tabCadastro;
-        protected TabControl TabControlCadastro;
+        protected ReaLTaiizor.Controls.MaterialTabControl TabControlCadastro;
         protected TabPage tabPageConsulta;
         private ImageList imageListMenu;
         protected ReaLTaiizor.Controls.MaterialButton buttonSalvar;

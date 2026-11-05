@@ -101,6 +101,7 @@
             Name = "FormPrincipal";
             Text = "FormPrincipal";
             WindowState = FormWindowState.Maximized;
+            FormClosing += FormPrincipal_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
