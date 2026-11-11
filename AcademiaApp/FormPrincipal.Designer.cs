@@ -99,7 +99,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
-            Text = "FormPrincipal";
+            Text = "Sistema Academia";
             WindowState = FormWindowState.Maximized;
             FormClosing += FormPrincipal_FormClosing;
             menuStrip1.ResumeLayout(false);
