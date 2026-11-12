@@ -38,8 +38,8 @@
             buttonExcluir = new ReaLTaiizor.Controls.MaterialButton();
             buttonEditar = new ReaLTaiizor.Controls.MaterialButton();
             buttonNovo = new ReaLTaiizor.Controls.MaterialButton();
-            imageListMenu = new ImageList(components);
             dataGridViewConsulta = new DataGridView();
+            imageListMenu = new ImageList(components);
             TabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
@@ -63,6 +63,7 @@
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.BackColor = Color.FromArgb(253, 242, 248);
             tabPageCadastro.Controls.Add(buttonSalvar);
             tabPageCadastro.Controls.Add(buttonCancelar);
             tabPageCadastro.ImageKey = "register.png";
@@ -72,7 +73,6 @@
             tabPageCadastro.Size = new Size(782, 361);
             tabPageCadastro.TabIndex = 0;
             tabPageCadastro.Text = "Cadastro";
-            tabPageCadastro.UseVisualStyleBackColor = true;
             // 
             // buttonSalvar
             // 
@@ -199,17 +199,10 @@
             buttonNovo.UseVisualStyleBackColor = true;
             buttonNovo.Click += buttonNovo_Click;
             // 
-            // imageListMenu
-            // 
-            imageListMenu.ColorDepth = ColorDepth.Depth32Bit;
-            imageListMenu.ImageStream = (ImageListStreamer)resources.GetObject("imageListMenu.ImageStream");
-            imageListMenu.TransparentColor = Color.Transparent;
-            imageListMenu.Images.SetKeyName(0, "find.png");
-            imageListMenu.Images.SetKeyName(1, "register.png");
-            // 
             // dataGridViewConsulta
             // 
             dataGridViewConsulta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewConsulta.BackgroundColor = Color.FromArgb(253, 242, 248);
             dataGridViewConsulta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewConsulta.ImeMode = ImeMode.NoControl;
             dataGridViewConsulta.Location = new Point(6, 6);
@@ -219,6 +212,14 @@
             dataGridViewConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewConsulta.Size = new Size(773, 304);
             dataGridViewConsulta.TabIndex = 0;
+            // 
+            // imageListMenu
+            // 
+            imageListMenu.ColorDepth = ColorDepth.Depth32Bit;
+            imageListMenu.ImageStream = (ImageListStreamer)resources.GetObject("imageListMenu.ImageStream");
+            imageListMenu.TransparentColor = Color.Transparent;
+            imageListMenu.Images.SetKeyName(0, "find.png");
+            imageListMenu.Images.SetKeyName(1, "register.png");
             // 
             // CadastroBase
             // 

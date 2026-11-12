@@ -119,7 +119,7 @@
             cboAluno.Hint = "Aluno";
             cboAluno.IntegralHeight = false;
             cboAluno.ItemHeight = 43;
-            cboAluno.Location = new Point(29, 61);
+            cboAluno.Location = new Point(31, 88);
             cboAluno.MaxDropDownItems = 4;
             cboAluno.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboAluno.Name = "cboAluno";
@@ -142,7 +142,7 @@
             txtDataFim.Hint = "Data Fim";
             txtDataFim.InsertKeyMode = InsertKeyMode.Default;
             txtDataFim.LeadingIcon = null;
-            txtDataFim.Location = new Point(573, 134);
+            txtDataFim.Location = new Point(575, 161);
             txtDataFim.Mask = "00/00/0000";
             txtDataFim.MaxLength = 32767;
             txtDataFim.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -185,7 +185,7 @@
             txtDataInicio.Hint = "Data Inicio";
             txtDataInicio.InsertKeyMode = InsertKeyMode.Default;
             txtDataInicio.LeadingIcon = null;
-            txtDataInicio.Location = new Point(29, 134);
+            txtDataInicio.Location = new Point(31, 161);
             txtDataInicio.Mask = "00/00/0000";
             txtDataInicio.MaxLength = 32767;
             txtDataInicio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -225,7 +225,7 @@
             txtDescricao.HideSelection = true;
             txtDescricao.Hint = "Descrição";
             txtDescricao.LeadingIcon = null;
-            txtDescricao.Location = new Point(29, 200);
+            txtDescricao.Location = new Point(31, 227);
             txtDescricao.MaxLength = 32767;
             txtDescricao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtDescricao.Name = "txtDescricao";
@@ -256,7 +256,7 @@
             txtNomeTreino.HideSelection = true;
             txtNomeTreino.Hint = "Nome Treino";
             txtNomeTreino.LeadingIcon = null;
-            txtNomeTreino.Location = new Point(573, 61);
+            txtNomeTreino.Location = new Point(575, 88);
             txtNomeTreino.MaxLength = 32767;
             txtNomeTreino.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtNomeTreino.Name = "txtNomeTreino";
@@ -287,7 +287,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(29, 6);
+            txtId.Location = new Point(31, 24);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -316,7 +316,7 @@
             grpExercicios.Controls.Add(txtRepeticoes);
             grpExercicios.Controls.Add(txtSeries);
             grpExercicios.Controls.Add(cboExercicio);
-            grpExercicios.Location = new Point(29, 265);
+            grpExercicios.Location = new Point(31, 292);
             grpExercicios.Name = "grpExercicios";
             grpExercicios.Size = new Size(1036, 349);
             grpExercicios.TabIndex = 17;
@@ -537,7 +537,7 @@
             Location = new Point(0, 0);
             Name = "CadastroTreino";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CadastroTreino";
+            Text = "Cadastro Treino";
             TabControlCadastro.ResumeLayout(false);
             tabPageConsulta.ResumeLayout(false);
             tabPageConsulta.PerformLayout();

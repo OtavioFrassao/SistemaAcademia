@@ -40,36 +40,32 @@
             // 
             TabControlCadastro.Size = new Size(508, 266);
             // 
-            // tabPageConsulta
-            // 
-            tabPageConsulta.Size = new Size(500, 238);
-            // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(378, 187);
+            buttonSalvar.Location = new Point(409, 187);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(274, 187);
+            buttonCancelar.Location = new Point(305, 187);
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(326, 187);
+            buttonEditar.Location = new Point(608, 310);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(254, 187);
+            buttonNovo.Location = new Point(536, 310);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(405, 187);
+            buttonExcluir.Location = new Point(687, 310);
             // 
             // tabPageCadastro
             // 
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Controls.Add(txtGrupoMuscular);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Size = new Size(469, 238);
+            tabPageCadastro.Size = new Size(500, 238);
             tabPageCadastro.Controls.SetChildIndex(buttonCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(buttonSalvar, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
@@ -88,7 +84,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(36, 31);
+            txtId.Location = new Point(56, 33);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -119,7 +115,7 @@
             txtGrupoMuscular.HideSelection = true;
             txtGrupoMuscular.Hint = "GrupoMuscular";
             txtGrupoMuscular.LeadingIcon = null;
-            txtGrupoMuscular.Location = new Point(36, 139);
+            txtGrupoMuscular.Location = new Point(56, 141);
             txtGrupoMuscular.MaxLength = 32767;
             txtGrupoMuscular.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtGrupoMuscular.Name = "txtGrupoMuscular";
@@ -150,7 +146,7 @@
             txtNome.HideSelection = true;
             txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(36, 85);
+            txtNome.Location = new Point(56, 87);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtNome.Name = "txtNome";
@@ -177,7 +173,7 @@
             Location = new Point(0, 0);
             Name = "CadastroExercicio";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CadastraExercicio";
+            Text = "Cadastra Exercicio";
             TabControlCadastro.ResumeLayout(false);
             tabPageConsulta.ResumeLayout(false);
             tabPageConsulta.PerformLayout();

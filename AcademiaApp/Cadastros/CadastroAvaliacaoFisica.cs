@@ -107,6 +107,7 @@ namespace AcademiaApp.Cadastros
             }).ToList();
 
             dataGridViewConsulta.DataSource = dadosGrid;
+            dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         protected override void CarregarRegistro(DataGridViewRow row)

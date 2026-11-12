@@ -28,6 +28,23 @@ namespace AcademiaApp.Base
             buttonNovo.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             buttonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             buttonExcluir.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            dataGridViewConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dataGridViewConsulta.MultiSelect = false;
+            dataGridViewConsulta.ReadOnly = true;
+
+            dataGridViewConsulta.CellDoubleClick += (sender, e) =>
+            {
+                if (e.RowIndex >= 0)
+                {
+                    dataGridViewConsulta.ClearSelection();
+
+                    dataGridViewConsulta.Rows[e.RowIndex].Selected = true;
+
+                    Editar();
+                }
+            };
         }
         #endregion
 

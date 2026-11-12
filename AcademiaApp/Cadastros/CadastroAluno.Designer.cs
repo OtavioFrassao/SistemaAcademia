@@ -45,11 +45,23 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(673, 279);
+            buttonSalvar.Location = new Point(695, 304);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(569, 279);
+            buttonCancelar.Location = new Point(591, 304);
+            // 
+            // buttonEditar
+            // 
+            buttonEditar.Location = new Point(608, 310);
+            // 
+            // buttonNovo
+            // 
+            buttonNovo.Location = new Point(536, 310);
+            // 
+            // buttonExcluir
+            // 
+            buttonExcluir.Location = new Point(687, 310);
             // 
             // tabPageCadastro
             // 
@@ -81,7 +93,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(41, 6);
+            txtId.Location = new Point(40, 34);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -112,7 +124,7 @@
             txtNome.HideSelection = true;
             txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(41, 60);
+            txtNome.Location = new Point(40, 88);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtNome.Name = "txtNome";
@@ -143,7 +155,7 @@
             txtEmail.HideSelection = true;
             txtEmail.Hint = "Email";
             txtEmail.LeadingIcon = null;
-            txtEmail.Location = new Point(41, 222);
+            txtEmail.Location = new Point(40, 250);
             txtEmail.MaxLength = 32767;
             txtEmail.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtEmail.Name = "txtEmail";
@@ -177,7 +189,7 @@
             txtCpf.Hint = "CPF";
             txtCpf.InsertKeyMode = InsertKeyMode.Default;
             txtCpf.LeadingIcon = null;
-            txtCpf.Location = new Point(41, 114);
+            txtCpf.Location = new Point(40, 142);
             txtCpf.Mask = "000,000,000-00";
             txtCpf.MaxLength = 32767;
             txtCpf.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -220,7 +232,7 @@
             txtTelefone.Hint = "Telefone";
             txtTelefone.InsertKeyMode = InsertKeyMode.Default;
             txtTelefone.LeadingIcon = null;
-            txtTelefone.Location = new Point(41, 168);
+            txtTelefone.Location = new Point(40, 196);
             txtTelefone.Mask = "(00) 00000-0000";
             txtTelefone.MaxLength = 32767;
             txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -263,7 +275,7 @@
             txtDataNascimento.Hint = "Data de Nascimento";
             txtDataNascimento.InsertKeyMode = InsertKeyMode.Default;
             txtDataNascimento.LeadingIcon = null;
-            txtDataNascimento.Location = new Point(442, 6);
+            txtDataNascimento.Location = new Point(441, 34);
             txtDataNascimento.Mask = "00/00/0000";
             txtDataNascimento.MaxLength = 32767;
             txtDataNascimento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -299,7 +311,7 @@
             Location = new Point(0, 0);
             Name = "CadastroAluno";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CadastroAluno";
+            Text = "Cadastro Aluno";
             TabControlCadastro.ResumeLayout(false);
             tabPageConsulta.ResumeLayout(false);
             tabPageConsulta.PerformLayout();
