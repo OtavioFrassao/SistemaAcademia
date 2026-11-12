@@ -19,16 +19,57 @@ namespace AcademiaApp.Base
         public CadastroBase()
         {
             InitializeComponent();
+            tabPageCadastro.Resize += (sender, e) => PosicionarBotoes();
+            tabPageConsulta.Resize += (sender, e) => PosicionarBotoes();
+
+            buttonSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            buttonCancelar.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+
+            buttonNovo.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            buttonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            buttonExcluir.Anchor = AnchorStyles.Top | AnchorStyles.Left;
         }
         #endregion
 
         #region Eventos de Tela
+        private void PosicionarBotoes()
+        {
+            int margem = 15;
+            int espaco = 8;
 
+            buttonSalvar.Location = new Point(
+                tabPageCadastro.ClientSize.Width
+                    - buttonSalvar.Width - margem,
+                tabPageCadastro.ClientSize.Height
+                    - buttonSalvar.Height - margem
+            );
+
+            buttonCancelar.Location = new Point(
+                buttonSalvar.Left - buttonCancelar.Width - espaco,
+                buttonSalvar.Top
+            );
+
+            buttonExcluir.Location = new Point(
+                tabPageConsulta.ClientSize.Width
+                    - buttonExcluir.Width - margem,
+                tabPageConsulta.ClientSize.Height
+                    - buttonExcluir.Height - margem
+            );
+
+            buttonEditar.Location = new Point(
+                buttonExcluir.Left - buttonEditar.Width - espaco,
+                buttonExcluir.Top
+            );
+
+            buttonNovo.Location = new Point(
+                buttonEditar.Left - buttonNovo.Width - espaco,
+                buttonEditar.Top
+            );
+        }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
-            // Se a tela for filha de um Form MDI Principal, calcula o centro
             if (MdiParent != null)
             {
                 this.Location = new System.Drawing.Point(

@@ -38,8 +38,8 @@
             buttonExcluir = new ReaLTaiizor.Controls.MaterialButton();
             buttonEditar = new ReaLTaiizor.Controls.MaterialButton();
             buttonNovo = new ReaLTaiizor.Controls.MaterialButton();
-            dataGridViewConsulta = new DataGridView();
             imageListMenu = new ImageList(components);
+            dataGridViewConsulta = new DataGridView();
             TabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
@@ -199,6 +199,14 @@
             buttonNovo.UseVisualStyleBackColor = true;
             buttonNovo.Click += buttonNovo_Click;
             // 
+            // imageListMenu
+            // 
+            imageListMenu.ColorDepth = ColorDepth.Depth32Bit;
+            imageListMenu.ImageStream = (ImageListStreamer)resources.GetObject("imageListMenu.ImageStream");
+            imageListMenu.TransparentColor = Color.Transparent;
+            imageListMenu.Images.SetKeyName(0, "find.png");
+            imageListMenu.Images.SetKeyName(1, "register.png");
+            // 
             // dataGridViewConsulta
             // 
             dataGridViewConsulta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -211,14 +219,6 @@
             dataGridViewConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewConsulta.Size = new Size(773, 304);
             dataGridViewConsulta.TabIndex = 0;
-            // 
-            // imageListMenu
-            // 
-            imageListMenu.ColorDepth = ColorDepth.Depth32Bit;
-            imageListMenu.ImageStream = (ImageListStreamer)resources.GetObject("imageListMenu.ImageStream");
-            imageListMenu.TransparentColor = Color.Transparent;
-            imageListMenu.Images.SetKeyName(0, "find.png");
-            imageListMenu.Images.SetKeyName(1, "register.png");
             // 
             // CadastroBase
             // 
@@ -249,8 +249,8 @@
         protected ReaLTaiizor.Controls.MaterialButton buttonCancelar;
         protected ReaLTaiizor.Controls.MaterialButton buttonEditar;
         protected ReaLTaiizor.Controls.MaterialButton buttonNovo;
-        protected DataGridView dataGridViewConsulta;
         protected ReaLTaiizor.Controls.MaterialButton buttonExcluir;
         protected TabPage tabPageCadastro;
+        protected DataGridView dataGridViewConsulta;
     }
 }

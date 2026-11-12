@@ -120,6 +120,7 @@ namespace AcademiaApp.Cadastros
             txtAltura.Text = row.Cells["Altura"].Value?.ToString();
             txtPercentualGordura.Text = row.Cells["PercentualGordura"].Value?.ToString();
         }
+
     }
 }
 

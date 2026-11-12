@@ -81,14 +81,5 @@ namespace AcademiaApp
             }
         }
 
-        private void itemTreinoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var cadastroItemTreino = ConfigureDI.ServiceProvider.GetService<CadastroItemTreino>();
-            if (cadastroItemTreino != null)
-            {
-                cadastroItemTreino.MdiParent = this;
-                cadastroItemTreino.Show();
-            }
-        }
     }
 }

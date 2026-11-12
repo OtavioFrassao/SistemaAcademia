@@ -45,11 +45,11 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(703, 280);
+            buttonSalvar.Location = new Point(671, 279);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(599, 280);
+            buttonCancelar.Location = new Point(567, 279);
             // 
             // tabPageCadastro
             // 
@@ -81,7 +81,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(6, 6);
+            txtId.Location = new Point(34, 6);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -93,7 +93,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(384, 48);
+            txtId.Size = new Size(343, 48);
             txtId.TabIndex = 4;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -115,11 +115,11 @@
             cboAluno.Hint = "Aluno";
             cboAluno.IntegralHeight = false;
             cboAluno.ItemHeight = 43;
-            cboAluno.Location = new Point(6, 60);
+            cboAluno.Location = new Point(410, 5);
             cboAluno.MaxDropDownItems = 4;
             cboAluno.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboAluno.Name = "cboAluno";
-            cboAluno.Size = new Size(384, 49);
+            cboAluno.Size = new Size(337, 49);
             cboAluno.StartIndex = 0;
             cboAluno.TabIndex = 5;
             // 
@@ -135,7 +135,7 @@
             txtPeso.HideSelection = true;
             txtPeso.Hint = "Peso";
             txtPeso.LeadingIcon = null;
-            txtPeso.Location = new Point(6, 115);
+            txtPeso.Location = new Point(34, 114);
             txtPeso.MaxLength = 32767;
             txtPeso.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtPeso.Name = "txtPeso";
@@ -147,7 +147,7 @@
             txtPeso.SelectionLength = 0;
             txtPeso.SelectionStart = 0;
             txtPeso.ShortcutsEnabled = true;
-            txtPeso.Size = new Size(384, 48);
+            txtPeso.Size = new Size(713, 48);
             txtPeso.TabIndex = 6;
             txtPeso.TabStop = false;
             txtPeso.TextAlign = HorizontalAlignment.Left;
@@ -166,7 +166,7 @@
             txtAltura.HideSelection = true;
             txtAltura.Hint = "Altura";
             txtAltura.LeadingIcon = null;
-            txtAltura.Location = new Point(6, 169);
+            txtAltura.Location = new Point(34, 168);
             txtAltura.MaxLength = 32767;
             txtAltura.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtAltura.Name = "txtAltura";
@@ -178,7 +178,7 @@
             txtAltura.SelectionLength = 0;
             txtAltura.SelectionStart = 0;
             txtAltura.ShortcutsEnabled = true;
-            txtAltura.Size = new Size(384, 48);
+            txtAltura.Size = new Size(713, 48);
             txtAltura.TabIndex = 7;
             txtAltura.TabStop = false;
             txtAltura.TextAlign = HorizontalAlignment.Left;
@@ -197,7 +197,7 @@
             txtPercentualGordura.HideSelection = true;
             txtPercentualGordura.Hint = "Percentual De Gordura";
             txtPercentualGordura.LeadingIcon = null;
-            txtPercentualGordura.Location = new Point(6, 223);
+            txtPercentualGordura.Location = new Point(34, 222);
             txtPercentualGordura.MaxLength = 32767;
             txtPercentualGordura.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtPercentualGordura.Name = "txtPercentualGordura";
@@ -209,7 +209,7 @@
             txtPercentualGordura.SelectionLength = 0;
             txtPercentualGordura.SelectionStart = 0;
             txtPercentualGordura.ShortcutsEnabled = true;
-            txtPercentualGordura.Size = new Size(384, 48);
+            txtPercentualGordura.Size = new Size(713, 48);
             txtPercentualGordura.TabIndex = 8;
             txtPercentualGordura.TabStop = false;
             txtPercentualGordura.TextAlign = HorizontalAlignment.Left;
@@ -228,7 +228,7 @@
             txtObservacao.HideSelection = true;
             txtObservacao.Hint = "Observação";
             txtObservacao.LeadingIcon = null;
-            txtObservacao.Location = new Point(414, 3);
+            txtObservacao.Location = new Point(34, 60);
             txtObservacao.MaxLength = 32767;
             txtObservacao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtObservacao.Name = "txtObservacao";
@@ -240,7 +240,7 @@
             txtObservacao.SelectionLength = 0;
             txtObservacao.SelectionStart = 0;
             txtObservacao.ShortcutsEnabled = true;
-            txtObservacao.Size = new Size(366, 48);
+            txtObservacao.Size = new Size(713, 48);
             txtObservacao.TabIndex = 9;
             txtObservacao.TabStop = false;
             txtObservacao.TextAlign = HorizontalAlignment.Left;
@@ -254,6 +254,7 @@
             ClientSize = new Size(800, 450);
             Location = new Point(0, 0);
             Name = "CadastroAvaliacaoFisica";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroAvaliacaoFisica";
             TabControlCadastro.ResumeLayout(false);
             tabPageConsulta.ResumeLayout(false);

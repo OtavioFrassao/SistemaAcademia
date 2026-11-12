@@ -18,6 +18,20 @@ namespace AcademiaApp.Cadastros
         {
             _exercicioService = exercicioService;
             InitializeComponent();
+            dataGridViewConsulta.Dock = DockStyle.None;
+
+            dataGridViewConsulta.Anchor =
+                AnchorStyles.Top |
+                AnchorStyles.Bottom |
+                AnchorStyles.Left |
+                AnchorStyles.Right;
+
+            dataGridViewConsulta.Location = new Point(6, 6);
+
+            dataGridViewConsulta.Size = new Size(
+                tabPageConsulta.ClientSize.Width - 12,
+                tabPageConsulta.ClientSize.Height - 65
+            );
             CarregaGrid();
         }
 

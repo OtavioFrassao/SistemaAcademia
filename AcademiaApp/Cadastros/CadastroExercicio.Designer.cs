@@ -38,34 +38,38 @@
             // 
             // TabControlCadastro
             // 
-            TabControlCadastro.Size = new Size(809, 385);
+            TabControlCadastro.Size = new Size(508, 266);
+            // 
+            // tabPageConsulta
+            // 
+            tabPageConsulta.Size = new Size(500, 238);
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(176, 196);
+            buttonSalvar.Location = new Point(378, 187);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(72, 196);
+            buttonCancelar.Location = new Point(274, 187);
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(633, 312);
+            buttonEditar.Location = new Point(326, 187);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(561, 312);
+            buttonNovo.Location = new Point(254, 187);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(712, 312);
+            buttonExcluir.Location = new Point(405, 187);
             // 
             // tabPageCadastro
             // 
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Controls.Add(txtGrupoMuscular);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Size = new Size(801, 357);
+            tabPageCadastro.Size = new Size(469, 238);
             tabPageCadastro.Controls.SetChildIndex(buttonCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(buttonSalvar, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
@@ -96,7 +100,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(216, 48);
+            txtId.Size = new Size(392, 48);
             txtId.TabIndex = 2;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -127,7 +131,7 @@
             txtGrupoMuscular.SelectionLength = 0;
             txtGrupoMuscular.SelectionStart = 0;
             txtGrupoMuscular.ShortcutsEnabled = true;
-            txtGrupoMuscular.Size = new Size(216, 48);
+            txtGrupoMuscular.Size = new Size(392, 48);
             txtGrupoMuscular.TabIndex = 3;
             txtGrupoMuscular.TabStop = false;
             txtGrupoMuscular.TextAlign = HorizontalAlignment.Left;
@@ -158,7 +162,7 @@
             txtNome.SelectionLength = 0;
             txtNome.SelectionStart = 0;
             txtNome.ShortcutsEnabled = true;
-            txtNome.Size = new Size(216, 48);
+            txtNome.Size = new Size(392, 48);
             txtNome.TabIndex = 4;
             txtNome.TabStop = false;
             txtNome.TextAlign = HorizontalAlignment.Left;
@@ -169,9 +173,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(815, 452);
+            ClientSize = new Size(514, 333);
             Location = new Point(0, 0);
             Name = "CadastroExercicio";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastraExercicio";
             TabControlCadastro.ResumeLayout(false);
             tabPageConsulta.ResumeLayout(false);

@@ -64,7 +64,6 @@ namespace AcademiaApp.Infra
             Services.AddTransient<CadastroAluno>();
             Services.AddTransient<CadastroAvaliacaoFisica>();
             Services.AddTransient<CadastroTreino>();
-            Services.AddTransient<CadastroItemTreino>();
             #endregion
 
             ServiceProvider = Services.BuildServiceProvider();

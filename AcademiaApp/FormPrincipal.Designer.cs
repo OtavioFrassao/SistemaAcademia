@@ -34,7 +34,6 @@
             exercicioToolStripMenuItem = new ToolStripMenuItem();
             avaliaçãoFisicaToolStripMenuItem = new ToolStripMenuItem();
             treinoToolStripMenuItem = new ToolStripMenuItem();
-            itemTreinoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +48,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoToolStripMenuItem, exercicioToolStripMenuItem, avaliaçãoFisicaToolStripMenuItem, treinoToolStripMenuItem, itemTreinoToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alunoToolStripMenuItem, exercicioToolStripMenuItem, avaliaçãoFisicaToolStripMenuItem, treinoToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -57,37 +56,30 @@
             // alunoToolStripMenuItem
             // 
             alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            alunoToolStripMenuItem.Size = new Size(157, 22);
+            alunoToolStripMenuItem.Size = new Size(180, 22);
             alunoToolStripMenuItem.Text = "Aluno";
             alunoToolStripMenuItem.Click += alunoToolStripMenuItem_Click;
             // 
             // exercicioToolStripMenuItem
             // 
             exercicioToolStripMenuItem.Name = "exercicioToolStripMenuItem";
-            exercicioToolStripMenuItem.Size = new Size(157, 22);
+            exercicioToolStripMenuItem.Size = new Size(180, 22);
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
             // 
             // avaliaçãoFisicaToolStripMenuItem
             // 
             avaliaçãoFisicaToolStripMenuItem.Name = "avaliaçãoFisicaToolStripMenuItem";
-            avaliaçãoFisicaToolStripMenuItem.Size = new Size(157, 22);
+            avaliaçãoFisicaToolStripMenuItem.Size = new Size(180, 22);
             avaliaçãoFisicaToolStripMenuItem.Text = "Avaliação Fisica";
             avaliaçãoFisicaToolStripMenuItem.Click += avaliaçãoFisicaToolStripMenuItem_Click;
             // 
             // treinoToolStripMenuItem
             // 
             treinoToolStripMenuItem.Name = "treinoToolStripMenuItem";
-            treinoToolStripMenuItem.Size = new Size(157, 22);
+            treinoToolStripMenuItem.Size = new Size(180, 22);
             treinoToolStripMenuItem.Text = "Treino";
             treinoToolStripMenuItem.Click += treinoToolStripMenuItem_Click;
-            // 
-            // itemTreinoToolStripMenuItem
-            // 
-            itemTreinoToolStripMenuItem.Name = "itemTreinoToolStripMenuItem";
-            itemTreinoToolStripMenuItem.Size = new Size(157, 22);
-            itemTreinoToolStripMenuItem.Text = "ItemTreino";
-            itemTreinoToolStripMenuItem.Click += itemTreinoToolStripMenuItem_Click;
             // 
             // FormPrincipal
             // 
@@ -115,6 +107,5 @@
         private ToolStripMenuItem avaliaçãoFisicaToolStripMenuItem;
         private ToolStripMenuItem treinoToolStripMenuItem;
         protected MenuStrip menuStrip1;
-        private ToolStripMenuItem itemTreinoToolStripMenuItem;
     }
 }

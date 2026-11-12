@@ -45,11 +45,11 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(644, 286);
+            buttonSalvar.Location = new Point(673, 279);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(540, 286);
+            buttonCancelar.Location = new Point(569, 279);
             // 
             // tabPageCadastro
             // 
@@ -81,7 +81,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(6, 6);
+            txtId.Location = new Point(41, 6);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -93,7 +93,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(384, 48);
+            txtId.Size = new Size(372, 48);
             txtId.TabIndex = 3;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -112,7 +112,7 @@
             txtNome.HideSelection = true;
             txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(6, 60);
+            txtNome.Location = new Point(41, 60);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtNome.Name = "txtNome";
@@ -124,7 +124,7 @@
             txtNome.SelectionLength = 0;
             txtNome.SelectionStart = 0;
             txtNome.ShortcutsEnabled = true;
-            txtNome.Size = new Size(384, 48);
+            txtNome.Size = new Size(708, 48);
             txtNome.TabIndex = 4;
             txtNome.TabStop = false;
             txtNome.TextAlign = HorizontalAlignment.Left;
@@ -143,7 +143,7 @@
             txtEmail.HideSelection = true;
             txtEmail.Hint = "Email";
             txtEmail.LeadingIcon = null;
-            txtEmail.Location = new Point(6, 222);
+            txtEmail.Location = new Point(41, 222);
             txtEmail.MaxLength = 32767;
             txtEmail.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtEmail.Name = "txtEmail";
@@ -155,7 +155,7 @@
             txtEmail.SelectionLength = 0;
             txtEmail.SelectionStart = 0;
             txtEmail.ShortcutsEnabled = true;
-            txtEmail.Size = new Size(384, 48);
+            txtEmail.Size = new Size(708, 48);
             txtEmail.TabIndex = 7;
             txtEmail.TabStop = false;
             txtEmail.TextAlign = HorizontalAlignment.Left;
@@ -177,7 +177,7 @@
             txtCpf.Hint = "CPF";
             txtCpf.InsertKeyMode = InsertKeyMode.Default;
             txtCpf.LeadingIcon = null;
-            txtCpf.Location = new Point(6, 114);
+            txtCpf.Location = new Point(41, 114);
             txtCpf.Mask = "000,000,000-00";
             txtCpf.MaxLength = 32767;
             txtCpf.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -194,7 +194,7 @@
             txtCpf.SelectionLength = 0;
             txtCpf.SelectionStart = 0;
             txtCpf.ShortcutsEnabled = true;
-            txtCpf.Size = new Size(384, 48);
+            txtCpf.Size = new Size(708, 48);
             txtCpf.SkipLiterals = true;
             txtCpf.TabIndex = 9;
             txtCpf.TabStop = false;
@@ -220,7 +220,7 @@
             txtTelefone.Hint = "Telefone";
             txtTelefone.InsertKeyMode = InsertKeyMode.Default;
             txtTelefone.LeadingIcon = null;
-            txtTelefone.Location = new Point(6, 168);
+            txtTelefone.Location = new Point(41, 168);
             txtTelefone.Mask = "(00) 00000-0000";
             txtTelefone.MaxLength = 32767;
             txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -237,7 +237,7 @@
             txtTelefone.SelectionLength = 0;
             txtTelefone.SelectionStart = 0;
             txtTelefone.ShortcutsEnabled = true;
-            txtTelefone.Size = new Size(384, 48);
+            txtTelefone.Size = new Size(708, 48);
             txtTelefone.SkipLiterals = true;
             txtTelefone.TabIndex = 10;
             txtTelefone.TabStop = false;
@@ -263,7 +263,7 @@
             txtDataNascimento.Hint = "Data de Nascimento";
             txtDataNascimento.InsertKeyMode = InsertKeyMode.Default;
             txtDataNascimento.LeadingIcon = null;
-            txtDataNascimento.Location = new Point(528, 6);
+            txtDataNascimento.Location = new Point(442, 6);
             txtDataNascimento.Mask = "00/00/0000";
             txtDataNascimento.MaxLength = 32767;
             txtDataNascimento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -280,7 +280,7 @@
             txtDataNascimento.SelectionLength = 0;
             txtDataNascimento.SelectionStart = 0;
             txtDataNascimento.ShortcutsEnabled = true;
-            txtDataNascimento.Size = new Size(180, 48);
+            txtDataNascimento.Size = new Size(307, 48);
             txtDataNascimento.SkipLiterals = true;
             txtDataNascimento.TabIndex = 11;
             txtDataNascimento.TabStop = false;
@@ -298,6 +298,7 @@
             ClientSize = new Size(800, 450);
             Location = new Point(0, 0);
             Name = "CadastroAluno";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroAluno";
             TabControlCadastro.ResumeLayout(false);
             tabPageConsulta.ResumeLayout(false);
