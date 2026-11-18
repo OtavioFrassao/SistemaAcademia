@@ -75,10 +75,7 @@ namespace AcademiaApp.Cadastros
         protected override void CarregaGrid()
         {
             _alunos = _alunoService.ReadAll<Aluno>().ToList();
-            dataGridViewConsulta.DataSource = _alunos;
-
-            if (dataGridViewConsulta.Columns["Nome"] != null)
-                dataGridViewConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FiltrarAlunos();
         }
 
         protected override void CarregarRegistro(DataGridViewRow row)
@@ -90,5 +87,64 @@ namespace AcademiaApp.Cadastros
             txtTelefone.Text = row.Cells["Telefone"].Value?.ToString();
             txtEmail.Text = row.Cells["Email"].Value?.ToString();
         }
+
+
+        private void txtPesquisaAluno_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarAlunos();
+        }
+
+
+        private void FiltrarAlunos()
+        {
+            string pesquisa = txtPesquisaAluno.Text.Trim();
+
+            var alunosFiltrados = _alunos
+                .Where(aluno =>
+                    string.IsNullOrWhiteSpace(pesquisa) ||
+                    (aluno.Nome?.Contains(
+                        pesquisa,
+                        StringComparison.OrdinalIgnoreCase
+                    ) ?? false) ||
+                    aluno.ID.ToString().Contains(pesquisa)
+                )
+                .Select(aluno => new
+                {
+                    ID = aluno.ID,
+                    Nome = aluno.Nome,
+                    Telefone = aluno.Telefone,
+                    Email = aluno.Email,
+                    CPF = aluno.CPF,
+                    DataNascimento = aluno.DataNascimento
+                })
+                .ToList();
+
+            dataGridViewConsulta.DataSource = null;
+            dataGridViewConsulta.AutoGenerateColumns = true;
+            dataGridViewConsulta.DataSource = alunosFiltrados;
+
+            dataGridViewConsulta.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.None;
+
+            dataGridViewConsulta.RowHeadersVisible = false;
+
+            dataGridViewConsulta.Columns["ID"].Width = 45;
+            dataGridViewConsulta.Columns["Telefone"].Width = 125;
+            dataGridViewConsulta.Columns["Email"].Width = 180;
+            dataGridViewConsulta.Columns["CPF"].Width = 125;
+
+            dataGridViewConsulta.Columns["DataNascimento"].Width = 115;
+            dataGridViewConsulta.Columns["DataNascimento"].HeaderText =
+                "Nascimento";
+
+            dataGridViewConsulta.Columns["DataNascimento"]
+                .DefaultCellStyle.Format = "dd/MM/yyyy";
+
+            dataGridViewConsulta.Columns["Nome"].MinimumWidth = 140;
+            dataGridViewConsulta.Columns["Nome"].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+
     }
 }

@@ -50,8 +50,27 @@ namespace AcademiaApp.Cadastros
 
             int largura = tabPageConsulta.ClientSize.Width - 12;
 
-            dataGridViewConsulta.Location = new Point(6, 6);
-            dataGridViewConsulta.Size = new Size(largura, 320);
+
+            // Tabela superior: treinos
+            dataGridViewConsulta.Location = new Point(6, 65);
+            dataGridViewConsulta.Size = new Size(largura, 260);
+
+            dataGridViewConsulta.ColumnHeadersVisible = true;
+            dataGridViewConsulta.ColumnHeadersHeight = 32;
+            dataGridViewConsulta.RowHeadersVisible = false;
+
+            // Tabela inferior: exercícios do treino
+            dgvExerciciosConsulta.Location = new Point(6, 335);
+            dgvExerciciosConsulta.Size = new Size(largura, 315);
+
+            dgvExerciciosConsulta.ColumnHeadersVisible = true;
+            dgvExerciciosConsulta.RowHeadersVisible = false;
+            dgvExerciciosConsulta.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Remove o fundo cinza da tabela inferior
+            dgvExerciciosConsulta.BackgroundColor =
+                Color.FromArgb(253, 242, 248);
 
             dgvExerciciosConsulta.Location = new Point(6, 335);
             dgvExerciciosConsulta.Size = new Size(largura, 315);
@@ -210,24 +229,61 @@ namespace AcademiaApp.Cadastros
             }
         }
 
+
         protected override void CarregaGrid()
         {
             _treinos = _treinoService.ReadAll<Treino>().ToList();
-
-            var dadosGrid = _treinos.Select(t => new
-            {
-                t.ID,
-                t.NomeTreino,
-                Aluno = t.Aluno != null ? t.Aluno.Nome : "Não informado",
-                t.Descricao,
-                DataInicio = t.DataInicio.ToString("dd/MM/yyyy"),
-                DataFim = t.DataFim.ToString("dd/MM/yyyy")
-            }).ToList();
-
-            dataGridViewConsulta.DataSource = dadosGrid;
-
-            dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            FiltrarTreinos();
         }
+
+        private void txtPesquisaTreino_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarTreinos();
+        }
+
+        private void FiltrarTreinos()
+        {
+            string pesquisa = txtPesquisaTreino.Text.Trim();
+
+            var dados = _treinos
+                .Where(t =>
+                    string.IsNullOrWhiteSpace(pesquisa) ||
+                    t.ID.ToString().Contains(pesquisa) ||
+                    (t.NomeTreino?.Contains(pesquisa,
+                        StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (t.Aluno?.Nome?.Contains(pesquisa,
+                        StringComparison.OrdinalIgnoreCase) ?? false))
+                .Select(t => new
+                {
+                    t.ID,
+                    t.NomeTreino,
+                    Aluno = t.Aluno?.Nome ?? "Não informado",
+                    t.Descricao,
+                    DataInicio = t.DataInicio.ToString("dd/MM/yyyy"),
+                    DataFim = t.DataFim.ToString("dd/MM/yyyy")
+                })
+                .ToList();
+
+            dataGridViewConsulta.DataSource = null;
+            dataGridViewConsulta.AutoGenerateColumns = true;
+            dataGridViewConsulta.DataSource = dados;
+
+            // Limpa a tabela inferior antes de carregar os exercícios
+            dgvExerciciosConsulta.DataSource = null;
+
+            // Ajusta o tamanho das colunas
+            dataGridViewConsulta.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridViewConsulta.Columns["ID"].FillWeight = 8;
+            dataGridViewConsulta.Columns["NomeTreino"].FillWeight = 22;
+            dataGridViewConsulta.Columns["Aluno"].FillWeight = 19;
+            dataGridViewConsulta.Columns["Descricao"].FillWeight = 27;
+            dataGridViewConsulta.Columns["DataInicio"].FillWeight = 12;
+            dataGridViewConsulta.Columns["DataFim"].FillWeight = 12;
+
+        }
+
 
         protected override void CarregarRegistro(DataGridViewRow row)
         {
