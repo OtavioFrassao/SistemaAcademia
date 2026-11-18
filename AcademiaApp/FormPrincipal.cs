@@ -23,6 +23,15 @@ namespace AcademiaApp
                     break;
                 }
             }
+
+            this.Shown += (sender, e) =>
+            {
+                FormDashboard dashboard = new FormDashboard();
+
+                dashboard.MdiParent = this;
+                dashboard.Show();
+                dashboard.WindowState = FormWindowState.Maximized;
+            };
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
