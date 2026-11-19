@@ -23,6 +23,28 @@ namespace AcademiaApp
                     break;
                 }
             }
+
+            this.Shown += (sender, e) =>
+            {
+                FormDashboard dashboard = new FormDashboard();
+
+                dashboard.MdiParent = this;
+                dashboard.WindowState = FormWindowState.Normal;
+                dashboard.StartPosition = FormStartPosition.Manual;
+                dashboard.FormBorderStyle = FormBorderStyle.None;
+
+                // Faz o Dashboard ocupar a área MDI sem maximizar
+                foreach (Control controle in this.Controls)
+                {
+                    if (controle is MdiClient areaMdi)
+                    {
+                        dashboard.Location = new Point(0, 0);
+                        dashboard.Size = areaMdi.ClientSize;
+                    }
+                }
+
+                dashboard.Show();
+            };
         }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)

@@ -31,6 +31,7 @@
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtGrupoMuscular = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtPesquisaExercicio = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             TabControlCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -39,6 +40,15 @@
             // TabControlCadastro
             // 
             TabControlCadastro.Size = new Size(508, 266);
+            // 
+            // tabPageConsulta
+            // 
+            tabPageConsulta.Controls.Add(txtPesquisaExercicio);
+            tabPageConsulta.Size = new Size(500, 238);
+            tabPageConsulta.Controls.SetChildIndex(buttonNovo, 0);
+            tabPageConsulta.Controls.SetChildIndex(buttonEditar, 0);
+            tabPageConsulta.Controls.SetChildIndex(buttonExcluir, 0);
+            tabPageConsulta.Controls.SetChildIndex(txtPesquisaExercicio, 0);
             // 
             // buttonSalvar
             // 
@@ -50,15 +60,15 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(608, 310);
+            buttonEditar.Location = new Point(326, 187);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(536, 310);
+            buttonNovo.Location = new Point(254, 187);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(687, 310);
+            buttonExcluir.Location = new Point(405, 187);
             // 
             // tabPageCadastro
             // 
@@ -165,6 +175,39 @@
             txtNome.TrailingIcon = null;
             txtNome.UseSystemPasswordChar = false;
             // 
+            // txtPesquisaExercicio
+            // 
+            txtPesquisaExercicio.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPesquisaExercicio.AnimateReadOnly = false;
+            txtPesquisaExercicio.AutoCompleteMode = AutoCompleteMode.None;
+            txtPesquisaExercicio.AutoCompleteSource = AutoCompleteSource.None;
+            txtPesquisaExercicio.BackgroundImageLayout = ImageLayout.None;
+            txtPesquisaExercicio.CharacterCasing = CharacterCasing.Normal;
+            txtPesquisaExercicio.Depth = 0;
+            txtPesquisaExercicio.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPesquisaExercicio.HideSelection = true;
+            txtPesquisaExercicio.Hint = "Pesquisar exercício por nome ou grupo muscular";
+            txtPesquisaExercicio.LeadingIcon = Properties.Resources.lupa_removebg_preview;
+            txtPesquisaExercicio.Location = new Point(6, 6);
+            txtPesquisaExercicio.MaxLength = 32767;
+            txtPesquisaExercicio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPesquisaExercicio.Name = "txtPesquisaExercicio";
+            txtPesquisaExercicio.PasswordChar = '\0';
+            txtPesquisaExercicio.PrefixSuffixText = null;
+            txtPesquisaExercicio.ReadOnly = false;
+            txtPesquisaExercicio.RightToLeft = RightToLeft.No;
+            txtPesquisaExercicio.SelectedText = "";
+            txtPesquisaExercicio.SelectionLength = 0;
+            txtPesquisaExercicio.SelectionStart = 0;
+            txtPesquisaExercicio.ShortcutsEnabled = true;
+            txtPesquisaExercicio.Size = new Size(491, 48);
+            txtPesquisaExercicio.TabIndex = 5;
+            txtPesquisaExercicio.TabStop = false;
+            txtPesquisaExercicio.TextAlign = HorizontalAlignment.Left;
+            txtPesquisaExercicio.TrailingIcon = null;
+            txtPesquisaExercicio.UseSystemPasswordChar = false;
+            txtPesquisaExercicio.TextChanged += txtPesquisaExercicio_TextChanged;
+            // 
             // CadastroExercicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -187,5 +230,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtGrupoMuscular;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPesquisaExercicio;
     }
 }

@@ -34,6 +34,7 @@
             txtCpf = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtTelefone = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtDataNascimento = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtPesquisaAluno = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             TabControlCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -41,27 +42,36 @@
             // 
             // TabControlCadastro
             // 
-            TabControlCadastro.Size = new Size(794, 383);
+            TabControlCadastro.Size = new Size(794, 443);
+            // 
+            // tabPageConsulta
+            // 
+            tabPageConsulta.Controls.Add(txtPesquisaAluno);
+            tabPageConsulta.Size = new Size(786, 415);
+            tabPageConsulta.Controls.SetChildIndex(buttonNovo, 0);
+            tabPageConsulta.Controls.SetChildIndex(buttonEditar, 0);
+            tabPageConsulta.Controls.SetChildIndex(buttonExcluir, 0);
+            tabPageConsulta.Controls.SetChildIndex(txtPesquisaAluno, 0);
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(695, 304);
+            buttonSalvar.Location = new Point(695, 364);
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(591, 304);
+            buttonCancelar.Location = new Point(591, 364);
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(608, 310);
+            buttonEditar.Location = new Point(612, 364);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(536, 310);
+            buttonNovo.Location = new Point(540, 364);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(687, 310);
+            buttonExcluir.Location = new Point(691, 364);
             // 
             // tabPageCadastro
             // 
@@ -71,7 +81,7 @@
             tabPageCadastro.Controls.Add(txtEmail);
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Size = new Size(786, 355);
+            tabPageCadastro.Size = new Size(786, 415);
             tabPageCadastro.Controls.SetChildIndex(buttonCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(buttonSalvar, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
@@ -303,11 +313,44 @@
             txtDataNascimento.UseSystemPasswordChar = false;
             txtDataNascimento.ValidatingType = null;
             // 
+            // txtPesquisaAluno
+            // 
+            txtPesquisaAluno.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPesquisaAluno.AnimateReadOnly = false;
+            txtPesquisaAluno.AutoCompleteMode = AutoCompleteMode.None;
+            txtPesquisaAluno.AutoCompleteSource = AutoCompleteSource.None;
+            txtPesquisaAluno.BackgroundImageLayout = ImageLayout.None;
+            txtPesquisaAluno.CharacterCasing = CharacterCasing.Normal;
+            txtPesquisaAluno.Depth = 0;
+            txtPesquisaAluno.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPesquisaAluno.HideSelection = true;
+            txtPesquisaAluno.Hint = "Pesquisar aluno por nome ou ID";
+            txtPesquisaAluno.LeadingIcon = Properties.Resources.lupa_removebg_preview;
+            txtPesquisaAluno.Location = new Point(6, 6);
+            txtPesquisaAluno.MaxLength = 32767;
+            txtPesquisaAluno.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPesquisaAluno.Name = "txtPesquisaAluno";
+            txtPesquisaAluno.PasswordChar = '\0';
+            txtPesquisaAluno.PrefixSuffixText = null;
+            txtPesquisaAluno.ReadOnly = false;
+            txtPesquisaAluno.RightToLeft = RightToLeft.No;
+            txtPesquisaAluno.SelectedText = "";
+            txtPesquisaAluno.SelectionLength = 0;
+            txtPesquisaAluno.SelectionStart = 0;
+            txtPesquisaAluno.ShortcutsEnabled = true;
+            txtPesquisaAluno.Size = new Size(777, 48);
+            txtPesquisaAluno.TabIndex = 4;
+            txtPesquisaAluno.TabStop = false;
+            txtPesquisaAluno.TextAlign = HorizontalAlignment.Left;
+            txtPesquisaAluno.TrailingIcon = null;
+            txtPesquisaAluno.UseSystemPasswordChar = false;
+            txtPesquisaAluno.TextChanged += txtPesquisaAluno_TextChanged;
+            // 
             // CadastroAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 510);
             Location = new Point(0, 0);
             Name = "CadastroAluno";
             StartPosition = FormStartPosition.CenterScreen;
@@ -327,5 +370,6 @@
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataNascimento;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtCpf;
         protected ReaLTaiizor.Controls.MaterialMaskedTextBox txtTelefone;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPesquisaAluno;
     }
 }
