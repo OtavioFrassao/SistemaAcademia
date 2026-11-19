@@ -244,8 +244,8 @@
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormDashboard";
+            StartPosition = FormStartPosition.Manual;
             Text = "Dashboard";
-            WindowState = FormWindowState.Maximized;
             tableLayoutPanel1.ResumeLayout(false);
             panelAvaliacoes.ResumeLayout(false);
             panelAvaliacoes.PerformLayout();

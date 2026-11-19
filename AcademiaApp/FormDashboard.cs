@@ -45,13 +45,13 @@ namespace AcademiaApp
                 lblTotalAlunos.Text =
                     alunos.ReadAll<Aluno>().Count().ToString();
 
-                lblTituloExercicios.Text =
+                lblTotalExercicios.Text =
                     exercicios.ReadAll<Exercicio>().Count().ToString();
 
-                lblTituloTreinos.Text =
+                lblTotalTreinos.Text =
                     treinos.ReadAll<Treino>().Count().ToString();
 
-                lblTituloAvaliacoes.Text =
+                lblTotalAvaliacoes.Text =
                     avaliacoes.ReadAll<AvaliacaoFisica>().Count().ToString();
             }
             catch (Exception ex)
