@@ -50,6 +50,8 @@ namespace AcademiaApp.Cadastros
                     _alunoService.Create<Aluno, Aluno, AlunoValidator>(aluno);
                 }
 
+                NotificarDadosAlterados();
+
                 TabControlCadastro.SelectedIndex = 1;
                 CarregaGrid();
             }
@@ -64,6 +66,7 @@ namespace AcademiaApp.Cadastros
             try
             {
                 _alunoService.Delete(id);
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)

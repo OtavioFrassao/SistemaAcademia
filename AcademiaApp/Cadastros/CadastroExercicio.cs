@@ -71,6 +71,7 @@ namespace AcademiaApp.Cadastros
                 }
 
                 TabControlCadastro.SelectedIndex = 1;
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)
@@ -84,6 +85,7 @@ namespace AcademiaApp.Cadastros
             try
             {
                 _exercicioService.Delete(id);
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)

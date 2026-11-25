@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using AcademiaApp.Infra;
+using AcademiaApp.Base;
 using AcademiaDomain;
 using AcademiaService.Base;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,16 @@ namespace AcademiaApp
         {
             InitializeComponent();
 
-            this.Shown += (sender, e) => AtualizarIndicadores();
+            this.Shown += (sender, e) =>
+            {
+                CadastroBase.DadosAlterados += AtualizarIndicadores;
+                AtualizarIndicadores();
+            };
+
+            this.FormClosed += (sender, e) =>
+            {
+                CadastroBase.DadosAlterados -= AtualizarIndicadores;
+            };
         }
 
         private void AtualizarIndicadores()
