@@ -34,6 +34,7 @@
             txtAltura = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtPercentualGordura = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtObservacao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtPesquisaAvaliacao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             TabControlCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -42,6 +43,15 @@
             // TabControlCadastro
             // 
             TabControlCadastro.Size = new Size(794, 383);
+            // 
+            // tabPageConsulta
+            // 
+            tabPageConsulta.Controls.Add(txtPesquisaAvaliacao);
+            tabPageConsulta.Size = new Size(786, 355);
+            tabPageConsulta.Controls.SetChildIndex(buttonNovo, 0);
+            tabPageConsulta.Controls.SetChildIndex(buttonEditar, 0);
+            tabPageConsulta.Controls.SetChildIndex(buttonExcluir, 0);
+            tabPageConsulta.Controls.SetChildIndex(txtPesquisaAvaliacao, 0);
             // 
             // buttonSalvar
             // 
@@ -53,15 +63,15 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(608, 310);
+            buttonEditar.Location = new Point(612, 304);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(536, 310);
+            buttonNovo.Location = new Point(540, 304);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(687, 310);
+            buttonExcluir.Location = new Point(691, 304);
             // 
             // tabPageCadastro
             // 
@@ -259,6 +269,39 @@
             txtObservacao.TrailingIcon = null;
             txtObservacao.UseSystemPasswordChar = false;
             // 
+            // txtPesquisaAvaliacao
+            // 
+            txtPesquisaAvaliacao.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPesquisaAvaliacao.AnimateReadOnly = false;
+            txtPesquisaAvaliacao.AutoCompleteMode = AutoCompleteMode.None;
+            txtPesquisaAvaliacao.AutoCompleteSource = AutoCompleteSource.None;
+            txtPesquisaAvaliacao.BackgroundImageLayout = ImageLayout.None;
+            txtPesquisaAvaliacao.CharacterCasing = CharacterCasing.Normal;
+            txtPesquisaAvaliacao.Depth = 0;
+            txtPesquisaAvaliacao.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPesquisaAvaliacao.HideSelection = true;
+            txtPesquisaAvaliacao.Hint = "Pesquisar avaliação por aluno ou ID";
+            txtPesquisaAvaliacao.LeadingIcon = Properties.Resources.lupa_removebg_preview;
+            txtPesquisaAvaliacao.Location = new Point(6, 6);
+            txtPesquisaAvaliacao.MaxLength = 32767;
+            txtPesquisaAvaliacao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPesquisaAvaliacao.Name = "txtPesquisaAvaliacao";
+            txtPesquisaAvaliacao.PasswordChar = '\0';
+            txtPesquisaAvaliacao.PrefixSuffixText = null;
+            txtPesquisaAvaliacao.ReadOnly = false;
+            txtPesquisaAvaliacao.RightToLeft = RightToLeft.No;
+            txtPesquisaAvaliacao.SelectedText = "";
+            txtPesquisaAvaliacao.SelectionLength = 0;
+            txtPesquisaAvaliacao.SelectionStart = 0;
+            txtPesquisaAvaliacao.ShortcutsEnabled = true;
+            txtPesquisaAvaliacao.Size = new Size(777, 48);
+            txtPesquisaAvaliacao.TabIndex = 7;
+            txtPesquisaAvaliacao.TabStop = false;
+            txtPesquisaAvaliacao.TextAlign = HorizontalAlignment.Left;
+            txtPesquisaAvaliacao.TrailingIcon = null;
+            txtPesquisaAvaliacao.UseSystemPasswordChar = false;
+            txtPesquisaAvaliacao.TextChanged += txtPesquisaAvaliacao_TextChanged;
+            // 
             // CadastroAvaliacaoFisica
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -284,5 +327,6 @@
         protected ReaLTaiizor.Controls.MaterialTextBoxEdit txtPeso;
         private ReaLTaiizor.Controls.MaterialComboBox cboAluno;
         protected ReaLTaiizor.Controls.MaterialTextBoxEdit txtObservacao;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPesquisaAvaliacao;
     }
 }

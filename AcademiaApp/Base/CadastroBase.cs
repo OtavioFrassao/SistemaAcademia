@@ -14,6 +14,15 @@ namespace AcademiaApp.Base
     {
         #region Declarações
         protected bool IsEditMode = false;
+
+        // Evento que avisa quando os dados do sistema mudam
+        public static event Action? DadosAlterados;
+
+        // Dispara o evento para atualizar o Dashboard
+        protected void NotificarDadosAlterados()
+        {
+            DadosAlterados?.Invoke();
+        }
         #endregion
         #region Construtor
         public CadastroBase()
@@ -207,6 +216,8 @@ namespace AcademiaApp.Base
             }
         }
         #endregion
+
+
     }
 }
 

@@ -18,6 +18,7 @@ namespace AcademiaApp.Cadastros
         {
             _exercicioService = exercicioService;
             InitializeComponent();
+
             dataGridViewConsulta.Dock = DockStyle.None;
 
             dataGridViewConsulta.Anchor =
@@ -26,12 +27,22 @@ namespace AcademiaApp.Cadastros
                 AnchorStyles.Left |
                 AnchorStyles.Right;
 
-            dataGridViewConsulta.Location = new Point(6, 6);
+            // Deixa espaço para a barra de pesquisa
+            dataGridViewConsulta.Location = new Point(6, 65);
 
             dataGridViewConsulta.Size = new Size(
                 tabPageConsulta.ClientSize.Width - 12,
-                tabPageConsulta.ClientSize.Height - 65
+                tabPageConsulta.ClientSize.Height - 130
             );
+
+            // Garante que o cabeçalho fique visível
+            dataGridViewConsulta.ColumnHeadersVisible = true;
+            dataGridViewConsulta.ColumnHeadersHeightSizeMode =
+                DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewConsulta.ColumnHeadersHeight = 32;
+
+            dataGridViewConsulta.RowHeadersVisible = false;
+
             CarregaGrid();
         }
 
@@ -60,6 +71,7 @@ namespace AcademiaApp.Cadastros
                 }
 
                 TabControlCadastro.SelectedIndex = 1;
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)
@@ -73,6 +85,7 @@ namespace AcademiaApp.Cadastros
             try
             {
                 _exercicioService.Delete(id);
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)
@@ -81,13 +94,56 @@ namespace AcademiaApp.Cadastros
             }
         }
 
+
         protected override void CarregaGrid()
         {
             _exercicios = _exercicioService.ReadAll<Exercicio>().ToList();
-            dataGridViewConsulta.DataSource = _exercicios;
-            if (dataGridViewConsulta.Columns["Nome"] != null)
-                dataGridViewConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FiltrarExercicios();
         }
+
+        private void txtPesquisaExercicio_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarExercicios();
+        }
+
+        private void FiltrarExercicios()
+        {
+            string pesquisa = txtPesquisaExercicio.Text.Trim();
+
+            var dados = _exercicios
+                .Where(e =>
+                    string.IsNullOrWhiteSpace(pesquisa) ||
+                    e.ID.ToString().Contains(pesquisa) ||
+                    (e.Nome?.Contains(pesquisa,
+                        StringComparison.OrdinalIgnoreCase) ?? false) ||
+                    (e.GrupoMuscular?.Contains(pesquisa,
+                        StringComparison.OrdinalIgnoreCase) ?? false))
+                .Select(e => new
+                {
+                    e.ID,
+                    e.Nome,
+                    e.GrupoMuscular
+                })
+                .ToList();
+
+            dataGridViewConsulta.DataSource = null;
+            dataGridViewConsulta.Columns.Clear();
+            dataGridViewConsulta.AutoGenerateColumns = true;
+            dataGridViewConsulta.DataSource = dados;
+
+
+            dataGridViewConsulta.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridViewConsulta.Columns["ID"].FillWeight = 12;
+            dataGridViewConsulta.Columns["Nome"].FillWeight = 48;
+            dataGridViewConsulta.Columns["GrupoMuscular"].FillWeight = 40;
+
+            dataGridViewConsulta.Columns["GrupoMuscular"].HeaderText =
+                "Grupo Muscular";
+
+        }
+
 
         protected override void CarregarRegistro(DataGridViewRow row)
         {

@@ -44,6 +44,7 @@
             txtSeries = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboExercicio = new ReaLTaiizor.Controls.MaterialComboBox();
             dgvExerciciosConsulta = new DataGridView();
+            txtPesquisaTreino = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             TabControlCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -58,11 +59,13 @@
             // 
             // tabPageConsulta
             // 
+            tabPageConsulta.Controls.Add(txtPesquisaTreino);
             tabPageConsulta.Controls.Add(dgvExerciciosConsulta);
             tabPageConsulta.Controls.SetChildIndex(dgvExerciciosConsulta, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonNovo, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonEditar, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonExcluir, 0);
+            tabPageConsulta.Controls.SetChildIndex(txtPesquisaTreino, 0);
             // 
             // buttonSalvar
             // 
@@ -74,15 +77,15 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(608, 310);
+            buttonEditar.Location = new Point(608, 337);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(536, 310);
+            buttonNovo.Location = new Point(536, 337);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(687, 310);
+            buttonExcluir.Location = new Point(687, 337);
             // 
             // tabPageCadastro
             // 
@@ -340,7 +343,7 @@
             btnEditarItem.TabIndex = 28;
             btnEditarItem.Text = "EDITAR SELECIONADO";
             btnEditarItem.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnEditarItem.UseAccentColor = false;
+            btnEditarItem.UseAccentColor = true;
             btnEditarItem.UseVisualStyleBackColor = true;
             btnEditarItem.Click += btnEditarItem_Click;
             // 
@@ -361,7 +364,7 @@
             btnRemover.TabIndex = 27;
             btnRemover.Text = "- REMOVE EXERCICIO";
             btnRemover.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnRemover.UseAccentColor = false;
+            btnRemover.UseAccentColor = true;
             btnRemover.UseVisualStyleBackColor = true;
             btnRemover.Click += btnRemover_Click;
             // 
@@ -395,7 +398,7 @@
             btnAdicionar.TabIndex = 25;
             btnAdicionar.Text = "+ Adicionar Exercicio";
             btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnAdicionar.UseAccentColor = false;
+            btnAdicionar.UseAccentColor = true;
             btnAdicionar.UseVisualStyleBackColor = true;
             btnAdicionar.Click += btnAdicionar_Click;
             // 
@@ -526,8 +529,41 @@
             dgvExerciciosConsulta.Name = "dgvExerciciosConsulta";
             dgvExerciciosConsulta.ReadOnly = true;
             dgvExerciciosConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvExerciciosConsulta.Size = new Size(6111, 329);
+            dgvExerciciosConsulta.Size = new Size(7053, 329);
             dgvExerciciosConsulta.TabIndex = 4;
+            // 
+            // txtPesquisaTreino
+            // 
+            txtPesquisaTreino.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPesquisaTreino.AnimateReadOnly = false;
+            txtPesquisaTreino.AutoCompleteMode = AutoCompleteMode.None;
+            txtPesquisaTreino.AutoCompleteSource = AutoCompleteSource.None;
+            txtPesquisaTreino.BackgroundImageLayout = ImageLayout.None;
+            txtPesquisaTreino.CharacterCasing = CharacterCasing.Normal;
+            txtPesquisaTreino.Depth = 0;
+            txtPesquisaTreino.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPesquisaTreino.HideSelection = true;
+            txtPesquisaTreino.Hint = "Pesquisar treino por nome, aluno ou ID";
+            txtPesquisaTreino.LeadingIcon = Properties.Resources.lupa_removebg_preview;
+            txtPesquisaTreino.Location = new Point(6, 6);
+            txtPesquisaTreino.MaxLength = 32767;
+            txtPesquisaTreino.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtPesquisaTreino.Name = "txtPesquisaTreino";
+            txtPesquisaTreino.PasswordChar = '\0';
+            txtPesquisaTreino.PrefixSuffixText = null;
+            txtPesquisaTreino.ReadOnly = false;
+            txtPesquisaTreino.RightToLeft = RightToLeft.No;
+            txtPesquisaTreino.SelectedText = "";
+            txtPesquisaTreino.SelectionLength = 0;
+            txtPesquisaTreino.SelectionStart = 0;
+            txtPesquisaTreino.ShortcutsEnabled = true;
+            txtPesquisaTreino.Size = new Size(1087, 48);
+            txtPesquisaTreino.TabIndex = 6;
+            txtPesquisaTreino.TabStop = false;
+            txtPesquisaTreino.TextAlign = HorizontalAlignment.Left;
+            txtPesquisaTreino.TrailingIcon = null;
+            txtPesquisaTreino.UseSystemPasswordChar = false;
+            txtPesquisaTreino.TextChanged += txtPesquisaTreino_TextChanged;
             // 
             // CadastroTreino
             // 
@@ -568,5 +604,6 @@
         private ReaLTaiizor.Controls.MaterialButton btnRemover;
         private ReaLTaiizor.Controls.MaterialButton btnEditarItem;
         private DataGridView dgvExerciciosConsulta;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPesquisaTreino;
     }
 }

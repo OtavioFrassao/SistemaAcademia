@@ -70,6 +70,7 @@ namespace AcademiaApp.Cadastros
                 }
 
                 TabControlCadastro.SelectedIndex = 1;
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)
@@ -84,6 +85,7 @@ namespace AcademiaApp.Cadastros
             try
             {
                 _avaliacaoService.Delete(id);
+                NotificarDadosAlterados();
                 CarregaGrid();
             }
             catch (Exception ex)
@@ -92,34 +94,75 @@ namespace AcademiaApp.Cadastros
             }
         }
 
+
         protected override void CarregaGrid()
         {
-            _avaliacoes = _avaliacaoService.ReadAll<AvaliacaoFisica>().ToList();
-            var dadosGrid = _avaliacoes.Select(a => new
-            {
-                a.ID,
-                Aluno = a.Aluno != null ? a.Aluno.Nome : "Não informado",
-                a.Peso,
-                a.Altura,
-                PercentualGordura = a.PercentualGordura,
-                Data = a.DataAvaliacao,
-                a.Observacao
-            }).ToList();
+            _avaliacoes = _avaliacaoService
+                .ReadAll<AvaliacaoFisica>()
+                .ToList();
 
-            dataGridViewConsulta.DataSource = dadosGrid;
-            dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            FiltrarAvaliacoes();
         }
+
+        private void txtPesquisaAvaliacao_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarAvaliacoes();
+        }
+
+        private void FiltrarAvaliacoes()
+        {
+            string pesquisa = txtPesquisaAvaliacao.Text.Trim();
+
+            var dados = _avaliacoes
+                .Where(a =>
+                    string.IsNullOrWhiteSpace(pesquisa) ||
+                    a.ID.ToString().Contains(pesquisa) ||
+                    (a.Aluno?.Nome?.Contains(pesquisa,
+                        StringComparison.OrdinalIgnoreCase) ?? false))
+                .Select(a => new
+                {
+                    a.ID,
+                    Aluno = a.Aluno?.Nome ?? "Não informado",
+                    a.Peso,
+                    a.Altura,
+                    a.PercentualGordura,
+                    Data = a.DataAvaliacao,
+                    a.Observacao
+                })
+                .ToList();
+
+            dataGridViewConsulta.DataSource = null;
+            dataGridViewConsulta.AutoGenerateColumns = true;
+            dataGridViewConsulta.DataSource = dados;
+
+            dataGridViewConsulta.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridViewConsulta.Columns["ID"].FillWeight = 10;
+            dataGridViewConsulta.Columns["Aluno"].FillWeight = 35;
+            dataGridViewConsulta.Columns["Observacao"].FillWeight = 35;
+
+            dataGridViewConsulta.Columns["Data"]
+                .DefaultCellStyle.Format = "dd/MM/yyyy";
+        }
+
 
         protected override void CarregarRegistro(DataGridViewRow row)
         {
-            txtId.Text = row.Cells["Id"].Value?.ToString() ?? row.Cells["ID"].Value?.ToString();
-            if (row.DataBoundItem is AvaliacaoFisica avaliacao && avaliacao.Aluno != null)
-            {
-                cboAluno.SelectedValue = avaliacao.Aluno.ID;
-            }
-            txtPeso.Text = row.Cells["Peso"].Value?.ToString();
-            txtAltura.Text = row.Cells["Altura"].Value?.ToString();
-            txtPercentualGordura.Text = row.Cells["PercentualGordura"].Value?.ToString();
+            int id = Convert.ToInt32(row.Cells["ID"].Value);
+
+            var avaliacao = _avaliacoes.FirstOrDefault(a => a.ID == id);
+
+            if (avaliacao == null)
+                return;
+
+            txtId.Text = avaliacao.ID.ToString();
+            cboAluno.SelectedValue = avaliacao.Aluno?.ID;
+            txtPeso.Text = avaliacao.Peso.ToString();
+            txtAltura.Text = avaliacao.Altura.ToString();
+            txtPercentualGordura.Text =
+                avaliacao.PercentualGordura.ToString();
+            txtObservacao.Text = avaliacao.Observacao;
         }
 
     }
