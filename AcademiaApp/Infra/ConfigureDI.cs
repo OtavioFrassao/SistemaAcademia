@@ -41,12 +41,14 @@ namespace AcademiaApp.Infra
             Services.AddScoped<IBaseRepository<ItemTreino>, BaseRepository<ItemTreino>>();
             #endregion
 
-            #region Serviços Injeção de Dependência
+            #region Repositorio Injeção de Dependência
+
             Services.AddScoped<IBaseRepository<Aluno>, BaseRepository<Aluno>>();
             Services.AddScoped<IBaseRepository<Exercicio>, BaseRepository<Exercicio>>();
             Services.AddScoped<IBaseRepository<AvaliacaoFisica>, BaseRepository<AvaliacaoFisica>>();
             Services.AddScoped<IBaseRepository<Treino>, TreinoRepository>();
             Services.AddScoped<IBaseRepository<ItemTreino>, BaseRepository<ItemTreino>>();
+
             #endregion
 
             #region Serviços Injeção de Dependência

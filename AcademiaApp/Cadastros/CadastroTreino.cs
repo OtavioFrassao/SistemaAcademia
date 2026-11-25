@@ -224,9 +224,34 @@ namespace AcademiaApp.Cadastros
                     _treinoService.Create<Treino, Treino, TreinoValidator>(treino);
                 }
 
+
+                int idEditado = IsEditMode
+                    ? Convert.ToInt32(txtId.Text)
+                    : 0;
+
                 TabControlCadastro.SelectedIndex = 1;
+
                 NotificarDadosAlterados();
+
                 CarregaGrid();
+
+                // Seleciona novamente o treino que foi editado
+                if (idEditado > 0)
+                {
+                    foreach (DataGridViewRow linha in dataGridViewConsulta.Rows)
+                    {
+                        if (Convert.ToInt32(linha.Cells["ID"].Value) == idEditado)
+                        {
+                            dataGridViewConsulta.ClearSelection();
+                            dataGridViewConsulta.CurrentCell = linha.Cells["ID"];
+                            linha.Selected = true;
+                            break;
+                        }
+                    }
+                }
+
+                CarregarItensDoTreino();
+
             }
             catch (Exception ex)
             {
@@ -285,12 +310,11 @@ namespace AcademiaApp.Cadastros
                 })
                 .ToList();
 
+            dgvExerciciosConsulta.DataSource = null;
+
             dataGridViewConsulta.DataSource = null;
             dataGridViewConsulta.AutoGenerateColumns = true;
             dataGridViewConsulta.DataSource = dados;
-
-            // Limpa a tabela inferior antes de carregar os exercícios
-            dgvExerciciosConsulta.DataSource = null;
 
             // Ajusta o tamanho das colunas
             dataGridViewConsulta.AutoSizeColumnsMode =
@@ -303,6 +327,7 @@ namespace AcademiaApp.Cadastros
             dataGridViewConsulta.Columns["DataInicio"].FillWeight = 12;
             dataGridViewConsulta.Columns["DataFim"].FillWeight = 12;
 
+            CarregarItensDoTreino();
         }
 
 
