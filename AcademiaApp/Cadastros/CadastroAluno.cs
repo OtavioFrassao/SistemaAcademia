@@ -149,5 +149,30 @@ namespace AcademiaApp.Cadastros
         }
 
 
+        private void btnVerPerfil_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewConsulta.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um aluno primeiro.");
+                return;
+            }
+
+            int id = Convert.ToInt32(
+                dataGridViewConsulta.CurrentRow.Cells["ID"].Value
+            );
+
+            var aluno = _alunoService.ReadById<Aluno>(id);
+
+            if (aluno == null)
+            {
+                MessageBox.Show("Aluno não encontrado.");
+                return;
+            }
+
+            using var perfil = new FormPerfilAluno(aluno);
+
+            perfil.ShowDialog(this);
+        }
+
     }
 }

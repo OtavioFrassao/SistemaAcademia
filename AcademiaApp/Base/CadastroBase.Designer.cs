@@ -93,7 +93,7 @@
             buttonSalvar.TabIndex = 1;
             buttonSalvar.Text = "Salvar";
             buttonSalvar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            buttonSalvar.UseAccentColor = false;
+            buttonSalvar.UseAccentColor = true;
             buttonSalvar.UseVisualStyleBackColor = true;
             buttonSalvar.Click += buttonSalvar_Click;
             // 
@@ -115,7 +115,7 @@
             buttonCancelar.TabIndex = 0;
             buttonCancelar.Text = "Cancelar";
             buttonCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            buttonCancelar.UseAccentColor = false;
+            buttonCancelar.UseAccentColor = true;
             buttonCancelar.UseVisualStyleBackColor = true;
             buttonCancelar.Click += buttonCancelar_Click;
             // 
@@ -152,7 +152,7 @@
             buttonExcluir.TabIndex = 3;
             buttonExcluir.Text = "Excluir";
             buttonExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            buttonExcluir.UseAccentColor = false;
+            buttonExcluir.UseAccentColor = true;
             buttonExcluir.UseVisualStyleBackColor = true;
             buttonExcluir.Click += buttonExcluir_Click;
             // 
@@ -174,7 +174,7 @@
             buttonEditar.TabIndex = 2;
             buttonEditar.Text = "Editar";
             buttonEditar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            buttonEditar.UseAccentColor = false;
+            buttonEditar.UseAccentColor = true;
             buttonEditar.UseVisualStyleBackColor = true;
             buttonEditar.Click += buttonEditar_Click;
             // 
@@ -196,7 +196,7 @@
             buttonNovo.TabIndex = 1;
             buttonNovo.Text = "Novo";
             buttonNovo.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            buttonNovo.UseAccentColor = false;
+            buttonNovo.UseAccentColor = true;
             buttonNovo.UseVisualStyleBackColor = true;
             buttonNovo.Click += buttonNovo_Click;
             // 

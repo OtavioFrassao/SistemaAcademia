@@ -61,7 +61,6 @@
             // 
             tabPageConsulta.Controls.Add(txtPesquisaTreino);
             tabPageConsulta.Controls.Add(dgvExerciciosConsulta);
-            tabPageConsulta.Size = new Size(1096, 680);
             tabPageConsulta.Controls.SetChildIndex(dgvExerciciosConsulta, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonNovo, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonEditar, 0);
@@ -78,15 +77,15 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(922, 629);
+            buttonEditar.Location = new Point(608, 337);
             // 
             // buttonNovo
             // 
-            buttonNovo.Location = new Point(850, 629);
+            buttonNovo.Location = new Point(536, 337);
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(1001, 629);
+            buttonExcluir.Location = new Point(687, 337);
             // 
             // tabPageCadastro
             // 
@@ -344,7 +343,7 @@
             btnEditarItem.TabIndex = 28;
             btnEditarItem.Text = "EDITAR SELECIONADO";
             btnEditarItem.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnEditarItem.UseAccentColor = false;
+            btnEditarItem.UseAccentColor = true;
             btnEditarItem.UseVisualStyleBackColor = true;
             btnEditarItem.Click += btnEditarItem_Click;
             // 
@@ -365,7 +364,7 @@
             btnRemover.TabIndex = 27;
             btnRemover.Text = "- REMOVE EXERCICIO";
             btnRemover.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnRemover.UseAccentColor = false;
+            btnRemover.UseAccentColor = true;
             btnRemover.UseVisualStyleBackColor = true;
             btnRemover.Click += btnRemover_Click;
             // 
@@ -399,7 +398,7 @@
             btnAdicionar.TabIndex = 25;
             btnAdicionar.Text = "+ Adicionar Exercicio";
             btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnAdicionar.UseAccentColor = false;
+            btnAdicionar.UseAccentColor = true;
             btnAdicionar.UseVisualStyleBackColor = true;
             btnAdicionar.Click += btnAdicionar_Click;
             // 

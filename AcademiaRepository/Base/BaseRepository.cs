@@ -50,7 +50,7 @@ namespace AcademiaRepository.Base
             return dbContext.ToList();
         }
 
-        public void Update(TypeEntity obj)
+        public virtual void  Update(TypeEntity obj)
         {
             _myDbContext.ChangeTracker.Clear();
 

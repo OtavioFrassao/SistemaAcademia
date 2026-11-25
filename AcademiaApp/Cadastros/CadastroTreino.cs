@@ -187,11 +187,30 @@ namespace AcademiaApp.Cadastros
                     return;
                 }
 
+
                 if (IsEditMode)
                 {
                     var id = Convert.ToInt32(txtId.Text);
+
                     var treino = _treinoService.ReadById<Treino>(id);
+
+                    if (treino == null)
+                        throw new Exception("Treino não encontrado.");
+
                     PreencheObjeto(treino);
+
+                    // Envia a lista atualizada de exercícios
+                    treino.ItensTreino = _itensTemporarios
+                        .Select(item => new ItemTreino
+                        {
+                            ID = item.ID,
+                            Treino = treino,
+                            Exercicio = item.Exercicio,
+                            Series = item.Series,
+                            Repeticoes = item.Repeticoes,
+                            CargaRecomendada = item.CargaRecomendada
+                        }).ToList();
+
                     _treinoService.Update<Treino, Treino, TreinoValidator>(treino);
                 }
                 else

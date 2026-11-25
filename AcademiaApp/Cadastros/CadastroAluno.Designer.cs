@@ -35,6 +35,7 @@
             txtTelefone = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtDataNascimento = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtPesquisaAluno = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            btnVerPerfil = new ReaLTaiizor.Controls.MaterialButton();
             TabControlCadastro.SuspendLayout();
             tabPageConsulta.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -46,12 +47,14 @@
             // 
             // tabPageConsulta
             // 
+            tabPageConsulta.Controls.Add(btnVerPerfil);
             tabPageConsulta.Controls.Add(txtPesquisaAluno);
             tabPageConsulta.Size = new Size(786, 415);
+            tabPageConsulta.Controls.SetChildIndex(txtPesquisaAluno, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonNovo, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonEditar, 0);
             tabPageConsulta.Controls.SetChildIndex(buttonExcluir, 0);
-            tabPageConsulta.Controls.SetChildIndex(txtPesquisaAluno, 0);
+            tabPageConsulta.Controls.SetChildIndex(btnVerPerfil, 0);
             // 
             // buttonSalvar
             // 
@@ -338,13 +341,35 @@
             txtPesquisaAluno.SelectionLength = 0;
             txtPesquisaAluno.SelectionStart = 0;
             txtPesquisaAluno.ShortcutsEnabled = true;
-            txtPesquisaAluno.Size = new Size(777, 48);
+            txtPesquisaAluno.Size = new Size(833, 48);
             txtPesquisaAluno.TabIndex = 4;
             txtPesquisaAluno.TabStop = false;
             txtPesquisaAluno.TextAlign = HorizontalAlignment.Left;
             txtPesquisaAluno.TrailingIcon = null;
             txtPesquisaAluno.UseSystemPasswordChar = false;
             txtPesquisaAluno.TextChanged += txtPesquisaAluno_TextChanged;
+            // 
+            // btnVerPerfil
+            // 
+            btnVerPerfil.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnVerPerfil.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnVerPerfil.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnVerPerfil.Depth = 0;
+            btnVerPerfil.HighEmphasis = true;
+            btnVerPerfil.Icon = null;
+            btnVerPerfil.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnVerPerfil.Location = new Point(7, 364);
+            btnVerPerfil.Margin = new Padding(4, 6, 4, 6);
+            btnVerPerfil.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnVerPerfil.Name = "btnVerPerfil";
+            btnVerPerfil.NoAccentTextColor = Color.Empty;
+            btnVerPerfil.Size = new Size(99, 36);
+            btnVerPerfil.TabIndex = 5;
+            btnVerPerfil.Text = "VER PERFIL";
+            btnVerPerfil.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnVerPerfil.UseAccentColor = true;
+            btnVerPerfil.UseVisualStyleBackColor = true;
+            btnVerPerfil.Click += btnVerPerfil_Click;
             // 
             // CadastroAluno
             // 
@@ -371,5 +396,6 @@
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtCpf;
         protected ReaLTaiizor.Controls.MaterialMaskedTextBox txtTelefone;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPesquisaAluno;
+        private ReaLTaiizor.Controls.MaterialButton btnVerPerfil;
     }
 }

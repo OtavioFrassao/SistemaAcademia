@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using System;
+using AcademiaRepository.Repositories;
 using System.IO;
 
 namespace AcademiaApp.Infra
@@ -41,11 +42,21 @@ namespace AcademiaApp.Infra
             #endregion
 
             #region Serviços Injeção de Dependência
+            Services.AddScoped<IBaseRepository<Aluno>, BaseRepository<Aluno>>();
+            Services.AddScoped<IBaseRepository<Exercicio>, BaseRepository<Exercicio>>();
+            Services.AddScoped<IBaseRepository<AvaliacaoFisica>, BaseRepository<AvaliacaoFisica>>();
+            Services.AddScoped<IBaseRepository<Treino>, TreinoRepository>();
+            Services.AddScoped<IBaseRepository<ItemTreino>, BaseRepository<ItemTreino>>();
+            #endregion
+
+            #region Serviços Injeção de Dependência
+
             Services.AddScoped<IBaseService<Aluno>, BaseService<Aluno>>();
             Services.AddScoped<IBaseService<Exercicio>, BaseService<Exercicio>>();
             Services.AddScoped<IBaseService<AvaliacaoFisica>, BaseService<AvaliacaoFisica>>();
             Services.AddScoped<IBaseService<Treino>, BaseService<Treino>>();
             Services.AddScoped<IBaseService<ItemTreino>, BaseService<ItemTreino>>();
+
             #endregion
 
             #region AutoMapper Injeção de Dependência
